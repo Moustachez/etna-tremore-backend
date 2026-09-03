@@ -1,7 +1,20 @@
 {
-  "updated_at": null,
+  "updated_at": "2026-09-03T21:30:07.553829+00:00",
   "unit": "nm/s",
-  "latest": null,
-  "thresholds": { "quiet_max": 100, "moderate_max": 1000 },
-  "history": []
+  "latest": {
+    "timestamp": "2026-09-03T21:30:07.553811+00:00",
+    "value_nm_s": 4494.28,
+    "station": "ECPN"
+  },
+  "thresholds": {
+    "quiet_max": 100,
+    "moderate_max": 1000
+  },
+  "history": [
+    {
+      "timestamp": "2026-09-03T21:30:07.553811+00:00",
+      "value_nm_s": 4494.28,
+      "station": "ECPN"
+    }
+  ]
 }
