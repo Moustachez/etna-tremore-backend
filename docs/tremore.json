@@ -1,0 +1,7 @@
+{
+  "updated_at": null,
+  "unit": "nm/s",
+  "latest": null,
+  "thresholds": { "quiet_max": 100, "moderate_max": 1000 },
+  "history": []
+}
