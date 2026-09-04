@@ -30,7 +30,7 @@ NETWORK = "IV"
 CHANNEL = "HHZ"
 
 WINDOW_MINUTES = 10          # finestra di calcolo del RMS
-HISTORY_MAX_POINTS = 432     # 432 punti * 10 min ≈ 3 giorni di storico
+HISTORY_MAX_POINTS = 4320    # 4320 punti * 10 min = 30 giorni di storico
 
 OUTPUT_FILE = Path(__file__).resolve().parent.parent / "docs" / "tremore.json"
 
@@ -87,6 +87,45 @@ def load_history() -> list[dict]:
     return []
 
 
+def compute_adaptive_thresholds(history: list[dict]) -> dict:
+    """
+    Calcola soglie "Quiete/Moderato/Alto" relative allo storico recente,
+    invece di usare numeri fissi indovinati. Usa i percentili 40° e 80°
+    degli ultimi valori disponibili (fino a 30 giorni): sotto il 40°
+    percentile = quiete, tra il 40° e l'80° = moderato, sopra = alto
+    (attività anomala rispetto al periodo osservato).
+
+    Finché non c'è abbastanza storico (meno di 12 punti, ~2 ore), usa una
+    soglia di partenza prudente basata sul valore corrente, che verrà
+    raffinata automaticamente man mano che si accumulano dati — la
+    calibrazione diventa via via più affidabile nell'arco del primo mese.
+    """
+    values = [point["value_nm_s"] for point in history if point.get("value_nm_s") is not None]
+
+    if len(values) < 12:
+        current = values[-1] if values else 500
+        return {
+            "quiet_max": round(current * 0.5, 1),
+            "moderate_max": round(current * 1.5, 1),
+            "calibration": "provvisoria (in attesa di più storico)",
+        }
+
+    quiet_max = float(np.percentile(values, 40))
+    moderate_max = float(np.percentile(values, 80))
+
+    hours = len(values) * WINDOW_MINUTES / 60
+    if hours < 48:
+        period = f"~{round(hours)}h"
+    else:
+        period = f"~{round(hours / 24)} giorni"
+
+    return {
+        "quiet_max": round(quiet_max, 1),
+        "moderate_max": round(moderate_max, 1),
+        "calibration": f"adattiva su {len(values)} misurazioni ({period})",
+    }
+
+
 def main() -> int:
     client = Client("INGV")
     end_time = UTCDateTime.now()
@@ -114,11 +153,13 @@ def main() -> int:
     else:
         print("Nessuna stazione disponibile in questo ciclo: non aggiungo un punto.")
 
+    thresholds = compute_adaptive_thresholds(history)
+
     output = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "unit": "nm/s",
         "latest": history[-1] if history else None,
-        "thresholds": {"quiet_max": 100, "moderate_max": 1000},
+        "thresholds": thresholds,
         "history": history,
     }
 
