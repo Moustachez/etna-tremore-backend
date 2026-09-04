@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-09-04T15:33:15.354367+00:00",
+  "updated_at": "2026-09-04T15:47:47.036677+00:00",
   "unit": "nm/s",
   "latest": {
-    "timestamp": "2026-09-04T15:33:15.354002+00:00",
-    "value_nm_s": 4.05,
+    "timestamp": "2026-09-04T15:47:47.036431+00:00",
+    "value_nm_s": 7.72,
     "station": "ECPN"
   },
   "thresholds": {
-    "quiet_max": 4670.0,
-    "moderate_max": 7208.8,
-    "calibration": "adattiva su 72 misurazioni (~12h)"
+    "quiet_max": 4634.5,
+    "moderate_max": 7187.7,
+    "calibration": "adattiva su 73 misurazioni (~12h)"
   },
   "history": [
     {
@@ -370,6 +370,11 @@
     {
       "timestamp": "2026-09-04T15:33:15.354002+00:00",
       "value_nm_s": 4.05,
+      "station": "ECPN"
+    },
+    {
+      "timestamp": "2026-09-04T15:47:47.036431+00:00",
+      "value_nm_s": 7.72,
       "station": "ECPN"
     }
   ]
