@@ -70,7 +70,7 @@ def compute_rms_nm_s(client: Client, station: str, end_time: UTCDateTime) -> flo
         trace = stream[0]
         # Velocità in m/s -> RMS -> nm/s
         rms_m_s = float(np.sqrt(np.mean(trace.data.astype(float) ** 2)))
-        rms_nm_s = rms_m_s * 1e9
+        rms_nm_s = rms_m_s * 1e6
         return round(rms_nm_s, 2)
     except Exception as exc:
         print(f"[{station}] errore nell'elaborazione: {exc}")
