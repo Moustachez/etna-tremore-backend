@@ -11,8 +11,8 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f0f0f0;
-            color: #1a1a1a;
+            background: #0a0a0a;
+            color: #e0e0e0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,10 +22,11 @@
         .container {
             max-width: 900px;
             width: 100%;
-            background: #ffffff;
+            background: #141414;
             border-radius: 16px;
             padding: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.9);
+            border: 1px solid #2a2a2a;
         }
         h1 {
             font-size: 28px;
@@ -34,25 +35,25 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            color: #1a1a1a;
+            color: #e0e0e0;
         }
         .subtitle {
-            color: #555;
+            color: #888;
             font-size: 14px;
             margin-bottom: 25px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #2a2a2a;
             padding-bottom: 15px;
             text-align: center;
         }
         .section-title {
             font-size: 18px;
-            color: #333;
+            color: #ccc;
             margin: 20px 0 15px 0;
             padding-bottom: 8px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #2a2a2a;
         }
         .card {
-            background: #f8f9fa;
+            background: #0f0f0f;
             border-radius: 12px;
             padding: 20px;
             margin-bottom: 15px;
@@ -66,7 +67,7 @@
         .unit {
             font-size: 20px;
             font-weight: 400;
-            color: #555;
+            color: #aaa;
             margin-left: 5px;
         }
         .label {
@@ -76,7 +77,7 @@
         }
         .station {
             font-size: 14px;
-            color: #555;
+            color: #aaa;
             margin-top: 5px;
         }
         .badge {
@@ -86,12 +87,12 @@
             font-size: 12px;
             font-weight: 600;
             text-transform: uppercase;
-            background: #e9ecef;
-            color: #333;
+            background: #2a2a2a;
+            color: #ccc;
         }
         .updated {
             font-size: 13px;
-            color: #666;
+            color: #888;
             margin-top: 10px;
         }
         .grid {
@@ -100,14 +101,15 @@
             gap: 10px;
         }
         .station-card {
-            background: #f8f9fa;
+            background: #0f0f0f;
             border-radius: 12px;
             padding: 15px;
-            border-left: 4px solid #ccc;
+            border-left: 4px solid #444;
         }
         .station-name {
             font-weight: 600;
             font-size: 16px;
+            color: #e0e0e0;
         }
         .station-value {
             font-size: 22px;
@@ -117,34 +119,38 @@
         .station-label {
             font-size: 14px;
             font-weight: 500;
+            color: #aaa;
         }
         .chart-container {
-            background: #ffffff;
+            background: #0f0f0f;
             border-radius: 12px;
             padding: 20px;
             margin-top: 10px;
-            border: 1px solid #e0e0e0;
+            border: 1px solid #2a2a2a;
         }
         .source {
             margin-top: 20px;
             font-size: 12px;
             color: #666;
-            border-top: 1px solid #ddd;
+            border-top: 1px solid #2a2a2a;
             padding-top: 15px;
             text-align: center;
         }
         .source a {
-            color: #0066cc;
+            color: #66aaff;
             text-decoration: none;
         }
+        .source a:hover {
+            text-decoration: underline;
+        }
         .loading {
-            color: #555;
+            color: #aaa;
             font-size: 18px;
             padding: 30px 0;
             text-align: center;
         }
         .error {
-            color: #cc0000;
+            color: #ff6666;
             padding: 20px;
             text-align: center;
         }
@@ -167,11 +173,10 @@
 
         <!-- GRAFICO RMS -->
         <div style="text-align:center; margin-top: 25px; margin-bottom: 10px;">
-            <span style="font-size:20px; font-weight:bold; color:#1a1a1a;">RMS</span>
+            <span style="font-size:20px; font-weight:bold; color:#e0e0e0;">RMS</span>
         </div>
         <div class="chart-container">
             <canvas id="ingvChart"></canvas>
-            
         </div>
 
         <div class="source">
@@ -186,7 +191,7 @@
         // ============================
         const ETNA_URL = 'tremore.json';
         const INGV_URL = 'ingv_all.json';
-        const HISTORY_URL = null;  // non usiamo più fetch JSON
+        const HISTORY_URL = null;
         let chartInstance = null;
 
         // ============================
@@ -221,17 +226,17 @@
 
         function createStationCard(stationName, data) {
             if (!data) {
-                return `<div class="station-card" style="border-left-color:#ccc; opacity:0.6;">
+                return `<div class="station-card" style="border-left-color:#444; opacity:0.6;">
                     <div class="station-name">${stationName}</div>
-                    <div class="station-value" style="color:#999;">N/D</div>
-                    <div class="station-label" style="color:#999;">Non disponibile</div>
+                    <div class="station-value" style="color:#666;">N/D</div>
+                    <div class="station-label" style="color:#666;">Non disponibile</div>
                 </div>`;
             }
             const color = data.color || '#94a3b8';
             const emoji = getEmojiForLevel(data.level);
             return `<div class="station-card" style="border-left-color:${color};">
                 <div class="station-name">${stationName}</div>
-                <div class="station-value" style="color:${color};">${data.rms_mV} <span style="font-size:14px;color:#555;">mV</span></div>
+                <div class="station-value" style="color:${color};">${data.rms_mV} <span style="font-size:14px;color:#aaa;">mV</span></div>
                 <div class="station-label" style="color:${color};">${emoji} ${data.label || data.level}</div>
             </div>`;
         }
@@ -243,9 +248,10 @@
             const canvas = document.getElementById('ingvChart');
             if (!canvas) return;
 
-            const stationData = historyData['ECNE'] || [];
+            // === USA LA STAZIONE ECPN (come INGV) ===
+            const stationData = historyData['ECPN'] || historyData['ECNE'] || [];
             if (stationData.length < 2) {
-                console.warn('Storico ECNE ha solo', stationData.length, 'valore/i. Servono almeno 2.');
+                console.warn('Storico ECPN ha solo', stationData.length, 'valore/i. Servono almeno 2.');
                 return;
             }
 
@@ -267,9 +273,9 @@
                     const xScale = scales.x;
 
                     const bands = [
-                        { min: 0.08, max: 1, color: 'rgba(34, 197, 94, 0.25)' },
-                        { min: 1, max: 9, color: 'rgba(234, 179, 8, 0.25)' },
-                        { min: 9, max: 100, color: 'rgba(239, 68, 68, 0.25)' }
+                        { min: 0.08, max: 1, color: 'rgba(34, 197, 94, 0.30)' },
+                        { min: 1, max: 9, color: 'rgba(234, 179, 8, 0.30)' },
+                        { min: 9, max: 100, color: 'rgba(239, 68, 68, 0.30)' }
                     ];
 
                     bands.forEach(band => {
@@ -293,9 +299,9 @@
                     datasets: [{
                         label: 'RMS (mV)',
                         data: values,
-                        borderColor: '#000000',
+                        borderColor: '#ffffff',
                         backgroundColor: 'rgba(0,0,0,0)',
-                        borderWidth: 1,
+                        borderWidth: 1.5,
                         pointRadius: 0,
                         pointHoverRadius: 4,
                         tension: 0,
@@ -312,32 +318,31 @@
                             type: 'logarithmic',
                             title: {
                                 display: true,
-                                text: '(mV)',
-                                color: '#000000',
+                                text: 'mV',
+                                color: '#ffffff',
                                 font: { size: 14, weight: 'bold' }
                             },
                             min: 0.08,
                             max: 100,
                             grid: {
                                 color: function(context) {
-        // Linee solo a 1, 10, 100 mV
-        const value = context.tick.value;
-        if (value === 1 || value === 10 || value === 100) {
-            return '#000000';  // nero
-        }
-        return 'rgba(0,0,0,0)';  // trasparente (invisibile)
-    },
-    lineWidth: function(context) {
-        const value = context.tick.value;
-        if (value === 1 || value === 10 || value === 100) {
-            return 1.5;  // sottile
-        }
-        return 0;
-    },
-    drawTicks: false
-    },
+                                    const value = context.tick.value;
+                                    if (value === 1 || value === 10 || value === 100) {
+                                        return '#ffffff';
+                                    }
+                                    return 'rgba(255,255,255,0)';
+                                },
+                                lineWidth: function(context) {
+                                    const value = context.tick.value;
+                                    if (value === 1 || value === 10 || value === 100) {
+                                        return 1.5;
+                                    }
+                                    return 0;
+                                },
+                                drawTicks: false
+                            },
                             ticks: {
-                                color: '#000000',
+                                color: '#ffffff',
                                 callback: function(value) {
                                     if (value === 0.1) return '10⁻¹';
                                     if (value === 1) return '10⁰';
@@ -360,12 +365,12 @@
                             title: {
                                 display: true,
                                 text: 'Tempo (UTC)',
-                                color: '#000000',
+                                color: '#ffffff',
                                 font: { size: 12 }
                             },
                             grid: { display: false },
                             ticks: {
-                                color: '#000000',
+                                color: '#ffffff',
                                 maxTicksLimit: 20,
                                 maxRotation: 45,
                                 minRotation: 30
@@ -410,7 +415,7 @@
                     console.warn('INGV non disponibile:', e);
                 }
 
-                // --- DATI STORICI DA VARIABILE GLOBALE (storia.js) ---
+                // --- DATI STORICI DA storia.js ---
                 let historyData = null;
                 if (typeof storiaData !== 'undefined' && storiaData) {
                     historyData = storiaData;
@@ -444,8 +449,8 @@
                 } else {
                     html += `
                         <div class="section-title">📊 EtnaMonitor (ECNE)</div>
-                        <div class="card" style="border-left-color:#ccc;">
-                            <div style="color:#999;">⏳ Dati non disponibili</div>
+                        <div class="card" style="border-left-color:#444;">
+                            <div style="color:#888;">⏳ Dati non disponibili</div>
                         </div>
                     `;
                 }
@@ -463,13 +468,12 @@
                     });
                     html += `
                         </div>
-                        
                     `;
                 } else {
                     html += `
                         <div class="section-title">📊 INGV (stazioni)</div>
-                        <div class="card" style="border-left-color:#ccc;">
-                            <div style="color:#999;">⏳ Dati INGV non disponibili</div>
+                        <div class="card" style="border-left-color:#444;">
+                            <div style="color:#888;">⏳ Dati INGV non disponibili</div>
                         </div>
                     `;
                 }
@@ -481,7 +485,7 @@
                 container.innerHTML = `
                     <div class="error">
                         ❌ Errore nel caricamento dei dati<br>
-                        <span style="font-size:14px;color:#555;">${error.message}</span>
+                        <span style="font-size:14px;color:#888;">${error.message}</span>
                     </div>
                 `;
             }
