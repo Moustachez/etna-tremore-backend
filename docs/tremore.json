@@ -4,7 +4,7 @@
     "level": "MODERATO",
     "label": "Attivit\u00e0 moderata",
     "color": "#eab308",
-    "timestamp": "2026-09-05T17:58:51.239171Z"
+    "timestamp": "2026-09-05T18:14:44.720277Z"
   },
   "history": [
     {
@@ -191,6 +191,13 @@
     },
     {
       "timestamp": "2026-09-05T17:58:51.239171Z",
+      "rms": 1500,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-05T18:14:44.720277Z",
       "rms": 1500,
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
