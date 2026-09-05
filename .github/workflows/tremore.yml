@@ -2,32 +2,33 @@ name: Calcola tremore Etna
 
 on:
   schedule:
-    - cron: '*/10 * * * *'  # Ogni 10 minuti
-  workflow_dispatch:         # Permette di eseguire manualmente
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   update-tremor:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-
-      - name: Install dependencies
+      
+      - name: Installa dipendenze
         run: |
-          pip install requests numpy
-
-      - name: Run tremor computation
+          pip install requests
+      
+      - name: Esegui script
         run: python scripts/compute_tremor.py
-
-      - name: Commit and push if changed
+      
+      - name: Commit e push
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
           git add docs/tremore.json
-          git diff --staged --quiet || git commit -m "Aggiorna dati tremore da EtnaMonitor"
+          git diff --staged --quiet || git commit -m "Aggiorna tremore da EtnaMonitor"
           git push
