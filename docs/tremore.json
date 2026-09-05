@@ -1,66 +1,18 @@
 {
-  "updated_at": "2026-09-05T11:58:09.819165+00:00",
-  "unit": "nm/s",
   "latest": {
     "rms": 1446,
-    "level": "ALTO",
-    "label": "Attivit\u00e0 elevata",
-    "color": "#ef4444",
-    "timestamp": "2026-09-05T13:00:00.656917Z"
-  },
-  "thresholds": {
-    "quiet_max": 4000,
-    "moderate_max": 9000
+    "level": "MODERATO",
+    "label": "Attività moderata",
+    "color": "#eab308",
+    "timestamp": "2026-09-05T20:54:57Z"
   },
   "history": [
     {
-      "timestamp": "2026-09-05T10:30:47.042098+00:00",
-      "value_nm_s": 5673.84,
-      "station": "ECNE"
-    },
-    {
-      "timestamp": "2026-09-05T10:40:38.584930+00:00",
-      "value_nm_s": 4705.32,
-      "station": "ECPN"
-    },
-    {
-      "timestamp": "2026-09-05T10:55:54.775761+00:00",
-      "value_nm_s": 5602.29,
-      "station": "ECNE"
-    },
-    {
-      "timestamp": "2026-09-05T11:10:08.226824+00:00",
-      "value_nm_s": 6147.31,
-      "station": "ECNE"
-    },
-    {
-      "timestamp": "2026-09-05T11:37:29.178941+00:00",
-      "value_nm_s": 32736.04,
-      "station": "ECBD"
-    },
-    {
-      "timestamp": "2026-09-05T11:47:28.471650+00:00",
-      "value_nm_s": 7687.42,
-      "station": "ECPN"
-    },
-    {
-      "timestamp": "2026-09-05T11:58:09.512424+00:00",
-      "value_nm_s": 7872.31,
-      "station": "ECNE"
-    },
-    {
-      "timestamp": "2026-09-05T12:54:57.894545Z",
+      "timestamp": "2026-09-05T20:54:57Z",
       "rms": 1446,
-      "level": "ALTO",
-      "label": "Attivit\u00e0 elevata",
-      "color": "#ef4444"
-    },
-    {
-      "timestamp": "2026-09-05T13:00:00.656917Z",
-      "rms": 1446,
-      "level": "ALTO",
-      "label": "Attivit\u00e0 elevata",
-      "color": "#ef4444"
+      "level": "MODERATO",
+      "label": "Attività moderata",
+      "color": "#eab308"
     }
   ]
 }
