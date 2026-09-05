@@ -1,0 +1,29 @@
+{
+  "ECNE": [
+    {
+      "timestamp": "2026-09-05T15:59:59.532043+00:00",
+      "rms_mV": 0.9254,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    }
+  ],
+  "ECBD": [
+    {
+      "timestamp": "2026-09-05T15:59:59.532043+00:00",
+      "rms_mV": 0.1186,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    }
+  ],
+  "EMFS": [
+    {
+      "timestamp": "2026-09-05T15:59:59.532043+00:00",
+      "rms_mV": 0.3138,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    }
+  ]
+}
