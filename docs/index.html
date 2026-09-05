@@ -262,6 +262,12 @@
                 chartInstance.destroy();
             }
 
+            // ============================
+            // MINIMO DINAMICO PER L'ASSE Y
+            // ============================
+            const minValue = Math.min(...values);
+            const dynamicMin = Math.max(0.08, minValue / 2);
+
             const ctx = canvas.getContext('2d');
 
             // Plugin per le bande di colore
@@ -273,10 +279,10 @@
                     const xScale = scales.x;
 
                     const bands = [
-    { min: 0.08, max: 3.55, color: 'rgba(34, 197, 94, 0.30)' },   // VERDE (da 0.08 a 3.55 mV)
-    { min: 3.55, max: 9.0, color: 'rgba(234, 179, 8, 0.30)' },    // GIALLO (da 3.55 a 9.0 mV)
-    { min: 9.0, max: 100, color: 'rgba(239, 68, 68, 0.30)' }      // ROSSO (da 9.0 a 100 mV)
-];
+                        { min: 0.08, max: 3.55, color: 'rgba(34, 197, 94, 0.30)' },
+                        { min: 3.55, max: 9.0, color: 'rgba(234, 179, 8, 0.30)' },
+                        { min: 9.0, max: 100, color: 'rgba(239, 68, 68, 0.30)' }
+                    ];
 
                     bands.forEach(band => {
                         const yMin = yScale.getPixelForValue(band.min);
@@ -322,7 +328,7 @@
                                 color: '#ffffff',
                                 font: { size: 14, weight: 'bold' }
                             },
-                            min: 0.08,
+                            min: dynamicMin,   // <-- MINIMO DINAMICO
                             max: 100,
                             grid: {
                                 color: function(context) {
