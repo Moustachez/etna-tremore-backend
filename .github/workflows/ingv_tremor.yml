@@ -26,17 +26,16 @@ jobs:
           pip install obspy scipy numpy
 
       - name: Esegui script INGV
-  run: python scripts/ingv_tremor_all.py
-
-- name: Converti storico in storia.js
-  run: python scripts/convert_history_to_js.py
         run: python scripts/ingv_tremor_all.py
 
-     - name: Commit e push
-  run: |
-    git config --global user.name "github-actions[bot]"
-    git config --global user.email "github-actions[bot]@users.noreply.github.com"
-    git pull origin main --rebase || echo "Nessuna modifica da pullare"
-    git add docs/ingv_all.json docs/storia.js
-    git diff --staged --quiet || git commit -m "Aggiornamento automatico INGV"
-    git push
+      - name: Converti storico in storia.js
+        run: python scripts/convert_history_to_js.py
+
+      - name: Commit e push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git pull origin main --rebase || echo "Nessuna modifica da pullare"
+          git add docs/ingv_all.json docs/storia.js
+          git diff --staged --quiet || git commit -m "Aggiornamento automatico INGV"
+          git push
