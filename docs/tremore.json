@@ -1,18 +1,25 @@
 {
   "latest": {
-    "rms": 1446,
-    "level": "MODERATO",
-    "label": "Attività moderata",
-    "color": "#eab308",
-    "timestamp": "2026-09-05T20:54:57Z"
+    "rms": 1200,
+    "level": "ALTO",
+    "label": "Attivit\u00e0 elevata",
+    "color": "#ef4444",
+    "timestamp": "2026-09-05T13:15:03.360088Z"
   },
   "history": [
     {
       "timestamp": "2026-09-05T20:54:57Z",
       "rms": 1446,
       "level": "MODERATO",
-      "label": "Attività moderata",
+      "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-05T13:15:03.360088Z",
+      "rms": 1200,
+      "level": "ALTO",
+      "label": "Attivit\u00e0 elevata",
+      "color": "#ef4444"
     }
   ]
 }
