@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌋 Tremore vulcanico Etna</title>
-    <!-- Chart.js + plugin per le annotazioni -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -56,7 +54,6 @@
             border-radius: 12px;
             padding: 20px;
             margin-bottom: 15px;
-            transition: all 0.3s ease;
             border-left: 6px solid #eab308;
         }
         .value {
@@ -105,7 +102,6 @@
             border-radius: 12px;
             padding: 15px;
             border-left: 4px solid #ccc;
-            transition: all 0.3s ease;
         }
         .station-name {
             font-weight: 600;
@@ -139,9 +135,6 @@
             color: #0066cc;
             text-decoration: none;
         }
-        .source a:hover {
-            text-decoration: underline;
-        }
         .loading {
             color: #555;
             font-size: 18px;
@@ -170,14 +163,14 @@
             <div class="loading">⏳ Caricamento dati...</div>
         </div>
 
-        <!-- GRAFICO INGV con bande colorate -->
+        <!-- GRAFICO RMS -->
         <div style="text-align:center; margin-top: 25px; margin-bottom: 10px;">
             <span style="font-size:20px; font-weight:bold; color:#1a1a1a;">RMS</span>
         </div>
         <div class="chart-container">
             <canvas id="ingvChart"></canvas>
             <div style="font-size:12px;color:#666;text-align:right;margin-top:8px;">
-                Scala logaritmica · Linee soglia: 1 mV (verde-giallo) e 9 mV (giallo-rosso)
+                Scala logaritmica · Linee soglia: 1 mV e 9 mV
             </div>
         </div>
 
@@ -188,11 +181,6 @@
     </div>
 
     <script>
-        // ============================
-        // REGISTRA IL PLUGIN
-        // ============================
-        Chart.register(ChartAnnotation);
-
         // ============================
         // CONFIGURAZIONE
         // ============================
@@ -249,7 +237,7 @@
         }
 
         // ============================
-        // GRAFICO A LINEA CON BANDE
+        // GRAFICO A LINEA CON BANDE (plugin personalizzato)
         // ============================
         function renderChart(historyData) {
             const canvas = document.getElementById('ingvChart');
@@ -269,6 +257,35 @@
             }
 
             const ctx = canvas.getContext('2d');
+
+            // Plugin personalizzato per disegnare le bande di colore sullo sfondo
+            const bandPlugin = {
+                id: 'bandPlugin',
+                beforeDraw: function(chart) {
+                    const { ctx, chartArea, scales } = chart;
+                    const yScale = scales.y;
+                    const xScale = scales.x;
+
+                    // Definisci le bande: [min, max, colore]
+                    const bands = [
+                        { min: 0.08, max: 1, color: 'rgba(34, 197, 94, 0.25)' },
+                        { min: 1, max: 9, color: 'rgba(234, 179, 8, 0.25)' },
+                        { min: 9, max: 100, color: 'rgba(239, 68, 68, 0.25)' }
+                    ];
+
+                    bands.forEach(band => {
+                        const yMin = yScale.getPixelForValue(band.min);
+                        const yMax = yScale.getPixelForValue(band.max);
+                        const yTop = Math.min(yMin, yMax);
+                        const yBottom = Math.max(yMin, yMax);
+
+                        ctx.save();
+                        ctx.fillStyle = band.color;
+                        ctx.fillRect(xScale.left, yTop, xScale.right - xScale.left, yBottom - yTop);
+                        ctx.restore();
+                    });
+                }
+            };
 
             chartInstance = new Chart(ctx, {
                 type: 'line',
@@ -345,56 +362,10 @@
                                     return context.parsed.y + ' mV';
                                 }
                             }
-                        },
-                        annotation: {
-                            annotations: {
-                                greenBand: {
-                                    type: 'box',
-                                    yMin: 0.08,
-                                    yMax: 1,
-                                    backgroundColor: 'rgba(34, 197, 94, 0.25)',
-                                    borderColor: 'rgba(34, 197, 94, 0)',
-                                    label: { display: false }
-                                },
-                                yellowBand: {
-                                    type: 'box',
-                                    yMin: 1,
-                                    yMax: 9,
-                                    backgroundColor: 'rgba(234, 179, 8, 0.25)',
-                                    borderColor: 'rgba(234, 179, 8, 0)',
-                                    label: { display: false }
-                                },
-                                redBand: {
-                                    type: 'box',
-                                    yMin: 9,
-                                    yMax: 100,
-                                    backgroundColor: 'rgba(239, 68, 68, 0.25)',
-                                    borderColor: 'rgba(239, 68, 68, 0)',
-                                    label: { display: false }
-                                },
-                                line1mV: {
-                                    type: 'line',
-                                    yMin: 1,
-                                    yMax: 1,
-                                    borderColor: '#000000',
-                                    borderWidth: 1,
-                                    borderDash: [4, 4],
-                                    label: { display: false }
-                                },
-                                line9mV: {
-                                    type: 'line',
-                                    yMin: 9,
-                                    yMax: 9,
-                                    borderColor: '#000000',
-                                    borderWidth: 1,
-                                    borderDash: [4, 4],
-                                    label: { display: false }
-                                }
-                            }
                         }
                     }
                 },
-                plugins: [ChartAnnotation]
+                plugins: [bandPlugin]
             });
         }
 
