@@ -4,7 +4,7 @@
     "level": "ALTO",
     "label": "Attivit\u00e0 elevata",
     "color": "#ef4444",
-    "timestamp": "2026-09-05T21:51:04.753792Z"
+    "timestamp": "2026-09-05T21:59:13.908798Z"
   },
   "history": [
     {
@@ -331,6 +331,13 @@
     },
     {
       "timestamp": "2026-09-05T21:51:04.753792Z",
+      "rms": 1347,
+      "level": "ALTO",
+      "label": "Attivit\u00e0 elevata",
+      "color": "#ef4444"
+    },
+    {
+      "timestamp": "2026-09-05T21:59:13.908798Z",
       "rms": 1347,
       "level": "ALTO",
       "label": "Attivit\u00e0 elevata",
