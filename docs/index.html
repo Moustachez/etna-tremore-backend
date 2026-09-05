@@ -171,9 +171,7 @@
         </div>
         <div class="chart-container">
             <canvas id="ingvChart"></canvas>
-            <div style="font-size:12px;color:#666;text-align:right;margin-top:8px;">
-                Scala logaritmica · Linee soglia: 1 mV e 9 mV
-            </div>
+            
         </div>
 
         <div class="source">
@@ -314,7 +312,7 @@
                             type: 'logarithmic',
                             title: {
                                 display: true,
-                                text: 'RMS (mV)',
+                                text: '(mV)',
                                 color: '#000000',
                                 font: { size: 14, weight: 'bold' }
                             },
@@ -452,9 +450,7 @@
                     });
                     html += `
                         </div>
-                        <div style="margin-top:10px;font-size:12px;color:#666;text-align:right;">
-                            Aggiornato: ${formatTime(ingvData.timestamp)} · Canale ${ingvData.channel || 'HHZ'}
-                        </div>
+                        
                     `;
                 } else {
                     html += `
