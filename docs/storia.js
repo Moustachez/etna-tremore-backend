@@ -1,4 +1,3 @@
-// Dati storici per il grafico
 var storiaData = {
   "ECNE": [
     {"timestamp": "2026-09-05T20:00:00.000000+00:00", "rms_mV": 0.95, "level": "QUIETE", "label": "Quiete", "color": "#22c55e"},
