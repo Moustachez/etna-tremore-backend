@@ -1,54 +1,331 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tremore vulcanico Etna</title>
-<style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 20px 16px 40px;
-    background: #ffffff;
-    color: #1a1a1a;
-  }
-  h1 { font-size: 1.5rem; margin-bottom: 4px; }
-  #status { color: #555; font-size: 0.95rem; margin-bottom: 16px; }
-  img { max-width: 100%; border-radius: 10px; display: block; }
-  .footer { font-size: 0.8rem; color: #888; margin-top: 16px; line-height: 1.4; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌋 Tremore vulcanico Etna</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: #1e293b;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        h1 span { font-size: 32px; }
+        .subtitle {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 15px;
+        }
+        .value-container {
+            background: #0f172a;
+            border-radius: 16px;
+            padding: 25px 20px;
+            margin-bottom: 20px;
+            transition: all 0.5s ease;
+        }
+        .value {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1;
+            transition: color 0.5s ease;
+        }
+        .unit {
+            font-size: 24px;
+            font-weight: 400;
+            color: #94a3b8;
+            margin-left: 5px;
+        }
+        .label {
+            font-size: 28px;
+            font-weight: 600;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+        }
+        .station {
+            font-size: 16px;
+            color: #94a3b8;
+            margin-top: 5px;
+        }
+        .updated {
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 15px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            background: #334155;
+            color: #94a3b8;
+        }
+        .history-section {
+            margin-top: 25px;
+            border-top: 1px solid #334155;
+            padding-top: 20px;
+        }
+        .history-section h3 {
+            font-size: 16px;
+            color: #94a3b8;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+        .history-bar-container {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .history-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+        }
+        .history-bar {
+            flex: 1;
+            height: 16px;
+            border-radius: 8px;
+            transition: width 0.5s ease;
+            min-width: 20px;
+        }
+        .history-time {
+            color: #94a3b8;
+            font-size: 11px;
+            min-width: 60px;
+            text-align: right;
+        }
+        .history-value {
+            font-weight: 600;
+            min-width: 70px;
+            text-align: right;
+        }
+        .source {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #475569;
+            border-top: 1px solid #334155;
+            padding-top: 15px;
+        }
+        .source a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+        .source a:hover {
+            text-decoration: underline;
+        }
+        .loading {
+            color: #94a3b8;
+            font-size: 18px;
+            padding: 30px 0;
+        }
+        .error {
+            color: #f87171;
+            padding: 20px;
+        }
+        @media (max-width: 480px) {
+            .value { font-size: 48px; }
+            .label { font-size: 22px; }
+            .container { padding: 20px; }
+        }
+    </style>
 </head>
 <body>
-  <h1>Tremore vulcanico Etna</h1>
-  <p id="status">Caricamento dati...</p>
-  <img id="chart" src="tremore_chart.png" alt="Grafico del tremore vulcanico" />
-  <p class="footer">
-    Valore calcolato da forme d'onda sismiche pubbliche INGV (rete IV),
-    aggiornato ogni 10 minuti. Bande: verde (quiete, &lt; 4.000 nm/s),
-    giallo (moderato, 4.000–9.000 nm/s), rosso (alto, &gt; 9.000 nm/s).
-  </p>
+    <div class="container">
+        <h1><span>🌋</span> Tremore Etna</h1>
+        <div class="subtitle">Monitoraggio in tempo reale</div>
 
-  <script>
-    fetch('tremore.json?t=' + Date.now())
-      .then((r) => r.json())
-      .then((data) => {
-        document.getElementById('chart').src = 'tremore_chart.png?t=' + Date.now();
-        var status = document.getElementById('status');
-        if (data.latest) {
-          var date = new Date(data.latest.timestamp);
-          status.textContent =
-            'Ultimo valore: ' + data.latest.value_nm_s + ' nm/s (stazione ' +
-            data.latest.station + ') — aggiornato ' +
-            date.toLocaleString('it-IT');
-        } else {
-          status.textContent = 'Nessun dato disponibile al momento.';
+        <div id="content">
+            <div class="loading">⏳ Caricamento dati...</div>
+        </div>
+
+        <div class="source">
+            Fonte: <a href="https://etnamonitor.it" target="_blank">EtnaMonitor.it</a> (stazione ECNE)
+            <br>
+            Dati aggiornati automaticamente ogni 10 minuti
+        </div>
+    </div>
+
+    <script>
+        // ============================
+        // CONFIGURAZIONE
+        // ============================
+        const JSON_URL = 'tremore.json';
+        const HISTORY_LIMIT = 10;
+
+        // ============================
+        // FUNZIONI DI UTILITÀ
+        // ============================
+        function formatTime(isoString) {
+            if (!isoString) return 'N/D';
+            try {
+                const date = new Date(isoString);
+                return date.toLocaleString('it-IT', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                });
+            } catch {
+                return isoString;
+            }
         }
-      })
-      .catch(() => {
-        document.getElementById('status').textContent =
-          'Impossibile caricare i dati aggiornati.';
-      });
-  </script>
+
+        function getColorForLevel(level) {
+            const colors = {
+                'QUIETE': '#22c55e',
+                'MODERATO': '#eab308',
+                'ALTO': '#ef4444'
+            };
+            return colors[level] || '#94a3b8';
+        }
+
+        function getEmojiForLevel(level) {
+            const emojis = {
+                'QUIETE': '🟢',
+                'MODERATO': '🟡',
+                'ALTO': '🔴'
+            };
+            return emojis[level] || '⚪';
+        }
+
+        // ============================
+        // FUNZIONE PRINCIPALE
+        // ============================
+        async function loadData() {
+            const container = document.getElementById('content');
+
+            try {
+                const response = await fetch(JSON_URL + '?t=' + Date.now());
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                console.log('📊 Dati ricevuti:', data);
+
+                // Controlla se ci sono dati
+                if (!data.latest && (!data.history || data.history.length === 0)) {
+                    container.innerHTML = `
+                        <div class="error">
+                            ⚠️ Nessun dato disponibile<br>
+                            <span style="font-size:14px;color:#94a3b8;">Attendi il prossimo aggiornamento</span>
+                        </div>
+                    `;
+                    return;
+                }
+
+                // Prendi l'ultimo valore
+                const latest = data.latest || data.history[data.history.length - 1];
+                const history = data.history || [];
+
+                // Determina colore ed emoji
+                const color = latest.color || getColorForLevel(latest.level);
+                const emoji = getEmojiForLevel(latest.level);
+
+                // Costruisci la vista
+                let html = `
+                    <div class="value-container" style="border-left: 6px solid ${color};">
+                        <div class="value" style="color: ${color};">
+                            ${latest.rms}
+                            <span class="unit">nm/s</span>
+                        </div>
+                        <div class="label" style="color: ${color};">
+                            ${emoji} ${latest.label || latest.level}
+                        </div>
+                        <div class="station">
+                            Stazione ECNE
+                            <span class="badge">${latest.level}</span>
+                        </div>
+                        <div class="updated">
+                            🕐 Aggiornato: ${formatTime(latest.timestamp)}
+                        </div>
+                    </div>
+                `;
+
+                // Storico (ultimi N valori)
+                if (history.length > 0) {
+                    const reversedHistory = [...history].reverse().slice(0, HISTORY_LIMIT);
+                    const maxValue = Math.max(...history.map(h => h.rms), 1000);
+
+                    html += `
+                        <div class="history-section">
+                            <h3>📈 Storico (ultimi ${reversedHistory.length} valori)</h3>
+                            <div class="history-bar-container">
+                    `;
+
+                    reversedHistory.forEach(item => {
+                        const barColor = item.color || getColorForLevel(item.level);
+                        const percent = Math.min((item.rms / maxValue) * 100, 100);
+                        html += `
+                            <div class="history-item">
+                                <span style="font-size:11px;color:#94a3b8;min-width:40px;">${item.level}</span>
+                                <div class="history-bar" style="width:${percent}%;background:${barColor};"></div>
+                                <span class="history-value" style="color:${barColor};">${item.rms}</span>
+                                <span class="history-time">${formatTime(item.timestamp).slice(5,16)}</span>
+                            </div>
+                        `;
+                    });
+
+                    html += `
+                            </div>
+                        </div>
+                    `;
+                }
+
+                container.innerHTML = html;
+
+            } catch (error) {
+                console.error('❌ Errore:', error);
+                container.innerHTML = `
+                    <div class="error">
+                        ❌ Errore nel caricamento dei dati<br>
+                        <span style="font-size:14px;color:#94a3b8;">${error.message}</span>
+                        <br><br>
+                        <span style="font-size:13px;color:#64748b;">
+                            Verifica che il file <code>tremore.json</code> sia disponibile.
+                        </span>
+                    </div>
+                `;
+            }
+        }
+
+        // ============================
+        // AVVIO
+        // ============================
+        // Carica subito
+        loadData();
+
+        // Ricarica ogni 60 secondi
+        setInterval(loadData, 60000);
+    </script>
 </body>
 </html>
