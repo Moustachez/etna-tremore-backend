@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌋 Tremore vulcanico Etna</title>
-    <!-- Chart.js per il grafico -->
+    <!-- Chart.js + plugin per le annotazioni -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
-            background: #0f172a;
-            color: #e2e8f0;
+            background: #f0f0f0;
+            color: #1a1a1a;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,42 +22,41 @@
         .container {
             max-width: 900px;
             width: 100%;
-            background: #1e293b;
-            border-radius: 20px;
+            background: #ffffff;
+            border-radius: 16px;
             padding: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
         h1 {
             font-size: 28px;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
+            color: #1a1a1a;
         }
         .subtitle {
-            color: #94a3b8;
+            color: #555;
             font-size: 14px;
             margin-bottom: 25px;
-            border-bottom: 1px solid #334155;
+            border-bottom: 1px solid #ddd;
             padding-bottom: 15px;
             text-align: center;
         }
         .section-title {
             font-size: 18px;
-            color: #94a3b8;
+            color: #333;
             margin: 20px 0 15px 0;
             padding-bottom: 8px;
-            border-bottom: 1px solid #334155;
+            border-bottom: 1px solid #ddd;
         }
         .card {
-            background: #0f172a;
-            border-radius: 16px;
+            background: #f8f9fa;
+            border-radius: 12px;
             padding: 20px;
             margin-bottom: 15px;
             transition: all 0.3s ease;
-        }
-        .card-etna {
             border-left: 6px solid #eab308;
         }
         .value {
@@ -67,7 +67,7 @@
         .unit {
             font-size: 20px;
             font-weight: 400;
-            color: #94a3b8;
+            color: #555;
             margin-left: 5px;
         }
         .label {
@@ -77,7 +77,7 @@
         }
         .station {
             font-size: 14px;
-            color: #94a3b8;
+            color: #555;
             margin-top: 5px;
         }
         .badge {
@@ -87,12 +87,12 @@
             font-size: 12px;
             font-weight: 600;
             text-transform: uppercase;
-            background: #334155;
-            color: #94a3b8;
+            background: #e9ecef;
+            color: #333;
         }
         .updated {
             font-size: 13px;
-            color: #64748b;
+            color: #666;
             margin-top: 10px;
         }
         .grid {
@@ -101,10 +101,10 @@
             gap: 10px;
         }
         .station-card {
-            background: #0f172a;
+            background: #f8f9fa;
             border-radius: 12px;
             padding: 15px;
-            border-left: 4px solid #334155;
+            border-left: 4px solid #ccc;
             transition: all 0.3s ease;
         }
         .station-name {
@@ -121,34 +121,35 @@
             font-weight: 500;
         }
         .chart-container {
-            background: #0f172a;
-            border-radius: 16px;
+            background: #ffffff;
+            border-radius: 12px;
             padding: 20px;
             margin-top: 10px;
+            border: 1px solid #e0e0e0;
         }
         .source {
             margin-top: 20px;
             font-size: 12px;
-            color: #475569;
-            border-top: 1px solid #334155;
+            color: #666;
+            border-top: 1px solid #ddd;
             padding-top: 15px;
             text-align: center;
         }
         .source a {
-            color: #60a5fa;
+            color: #0066cc;
             text-decoration: none;
         }
         .source a:hover {
             text-decoration: underline;
         }
         .loading {
-            color: #94a3b8;
+            color: #555;
             font-size: 18px;
             padding: 30px 0;
             text-align: center;
         }
         .error {
-            color: #f87171;
+            color: #cc0000;
             padding: 20px;
             text-align: center;
         }
@@ -169,14 +170,14 @@
             <div class="loading">⏳ Caricamento dati...</div>
         </div>
 
-        <!-- GRAFICO INGV -->
+        <!-- GRAFICO INGV con bande colorate -->
         <div style="text-align:center; margin-top: 25px; margin-bottom: 10px;">
-    <span style="font-size:20px; font-weight:bold; color:#e2e8f0;">RMS</span>
-</div>
+            <span style="font-size:20px; font-weight:bold; color:#1a1a1a;">RMS</span>
+        </div>
         <div class="chart-container">
             <canvas id="ingvChart"></canvas>
-            <div style="font-size:12px;color:#64748b;text-align:right;margin-top:10px;">
-                Scala logaritmica · Linee: 1 mV (giallo) e 9 mV (rosso)
+            <div style="font-size:12px;color:#666;text-align:right;margin-top:8px;">
+                Scala logaritmica · Linee soglia: 1 mV (verde-giallo) e 9 mV (giallo-rosso)
             </div>
         </div>
 
@@ -187,6 +188,14 @@
     </div>
 
     <script>
+        // ============================
+        // REGISTRA IL PLUGIN
+        // ============================
+        Chart.register(ChartAnnotation);
+
+        // ============================
+        // CONFIGURAZIONE
+        // ============================
         const ETNA_URL = 'tremore.json';
         const INGV_URL = 'ingv_all.json';
         const HISTORY_URL = 'ingv_history.json';
@@ -224,182 +233,170 @@
 
         function createStationCard(stationName, data) {
             if (!data) {
-                return `<div class="station-card" style="border-left-color:#475569; opacity:0.5;">
+                return `<div class="station-card" style="border-left-color:#ccc; opacity:0.6;">
                     <div class="station-name">${stationName}</div>
-                    <div class="station-value" style="color:#475569;">N/D</div>
-                    <div class="station-label" style="color:#475569;">Non disponibile</div>
+                    <div class="station-value" style="color:#999;">N/D</div>
+                    <div class="station-label" style="color:#999;">Non disponibile</div>
                 </div>`;
             }
             const color = data.color || '#94a3b8';
             const emoji = getEmojiForLevel(data.level);
             return `<div class="station-card" style="border-left-color:${color};">
                 <div class="station-name">${stationName}</div>
-                <div class="station-value" style="color:${color};">${data.rms_mV} <span style="font-size:14px;color:#94a3b8;">mV</span></div>
+                <div class="station-value" style="color:${color};">${data.rms_mV} <span style="font-size:14px;color:#555;">mV</span></div>
                 <div class="station-label" style="color:${color};">${emoji} ${data.label || data.level}</div>
             </div>`;
         }
 
         // ============================
-        // GRAFICO
+        // GRAFICO A LINEA CON BANDE
         // ============================
         function renderChart(historyData) {
-    const canvas = document.getElementById('ingvChart');
-    if (!canvas) return;
+            const canvas = document.getElementById('ingvChart');
+            if (!canvas) return;
 
-    const stationData = historyData['ECNE'] || [];
-    if (stationData.length < 2) {
-        console.warn('Storico ECNE ha solo', stationData.length, 'valore/i. Servono almeno 2.');
-        return;
-    }
+            const stationData = historyData['ECNE'] || [];
+            if (stationData.length < 2) {
+                console.warn('Storico ECNE ha solo', stationData.length, 'valore/i. Servono almeno 2.');
+                return;
+            }
 
-    const labels = stationData.map(d => new Date(d.timestamp));
-    const values = stationData.map(d => d.rms_mV);
-    const colors = stationData.map(d => getColorForLevel(d.level));
+            const labels = stationData.map(d => new Date(d.timestamp));
+            const values = stationData.map(d => d.rms_mV);
 
-    if (chartInstance) {
-        chartInstance.destroy();
-    }
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
 
-    const ctx = canvas.getContext('2d');
-    chartInstance = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'RMS (mV)',
-                data: values,
-                backgroundColor: colors,
-                borderColor: colors,
-                borderWidth: 1,
-                borderRadius: 2
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            animation: { duration: 500 },
-            scales: {
-                y: {
-                    type: 'logarithmic',
-                    title: {
-                        display: true,
-                        text: 'RMS (mV)',
-                        color: '#94a3b8',
-                        font: { size: 14, weight: 'bold' }
+            const ctx = canvas.getContext('2d');
+
+            chartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'RMS (mV)',
+                        data: values,
+                        borderColor: '#000000',
+                        backgroundColor: 'rgba(0,0,0,0)',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#000000',
+                        pointBorderColor: '#000000',
+                        pointRadius: 4,
+                        pointHoverRadius: 6,
+                        tension: 0.1,
+                        fill: false,
+                        spanGaps: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    animation: { duration: 500 },
+                    scales: {
+                        y: {
+                            type: 'logarithmic',
+                            title: {
+                                display: true,
+                                text: 'RMS (mV)',
+                                color: '#000000',
+                                font: { size: 14, weight: 'bold' }
+                            },
+                            min: 0.08,
+                            max: 100,
+                            grid: {
+                                color: '#d0d0d0',
+                                drawTicks: true,
+                                tickLength: 5
+                            },
+                            ticks: {
+                                color: '#000000',
+                                callback: function(value) {
+                                    if (value === 0.1) return '10⁻¹';
+                                    if (value === 1) return '10⁰';
+                                    if (value === 10) return '10¹';
+                                    if (value === 100) return '10²';
+                                    return '';
+                                }
+                            }
+                        },
+                        x: {
+                            type: 'category',
+                            title: {
+                                display: true,
+                                text: 'Tempo (UTC)',
+                                color: '#000000',
+                                font: { size: 12 }
+                            },
+                            grid: { display: false },
+                            ticks: {
+                                color: '#000000',
+                                maxTicksLimit: 15,
+                                maxRotation: 45,
+                                minRotation: 30
+                            }
+                        }
                     },
-                    min: 0.08,
-                    max: 100,
-                    grid: { color: '#334155' },
-                    ticks: {
-                        color: '#94a3b8',
-                        callback: function(value) {
-                            // Mostra le etichette in formato 10^0, 10^1, 10^2
-                            if (value === 0.1) return '10⁻¹';
-                            if (value === 1) return '10⁰';
-                            if (value === 10) return '10¹';
-                            if (value === 100) return '10²';
-                            return '';
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.parsed.y + ' mV';
+                                }
+                            }
+                        },
+                        annotation: {
+                            annotations: {
+                                greenBand: {
+                                    type: 'box',
+                                    yMin: 0.08,
+                                    yMax: 1,
+                                    backgroundColor: 'rgba(34, 197, 94, 0.25)',
+                                    borderColor: 'rgba(34, 197, 94, 0)',
+                                    label: { display: false }
+                                },
+                                yellowBand: {
+                                    type: 'box',
+                                    yMin: 1,
+                                    yMax: 9,
+                                    backgroundColor: 'rgba(234, 179, 8, 0.25)',
+                                    borderColor: 'rgba(234, 179, 8, 0)',
+                                    label: { display: false }
+                                },
+                                redBand: {
+                                    type: 'box',
+                                    yMin: 9,
+                                    yMax: 100,
+                                    backgroundColor: 'rgba(239, 68, 68, 0.25)',
+                                    borderColor: 'rgba(239, 68, 68, 0)',
+                                    label: { display: false }
+                                },
+                                line1mV: {
+                                    type: 'line',
+                                    yMin: 1,
+                                    yMax: 1,
+                                    borderColor: '#000000',
+                                    borderWidth: 1,
+                                    borderDash: [4, 4],
+                                    label: { display: false }
+                                },
+                                line9mV: {
+                                    type: 'line',
+                                    yMin: 9,
+                                    yMax: 9,
+                                    borderColor: '#000000',
+                                    borderWidth: 1,
+                                    borderDash: [4, 4],
+                                    label: { display: false }
+                                }
+                            }
                         }
                     }
                 },
-                x: {
-                    type: 'category',
-                    title: {
-                        display: true,
-                        text: 'Tempo (UTC)',
-                        color: '#94a3b8',
-                        font: { size: 12 }
-                    },
-                    grid: { display: false },
-                    ticks: {
-                        color: '#94a3b8',
-                        maxTicksLimit: 15,
-                        maxRotation: 45,
-                        minRotation: 30
-                    }
-                }
-            },
-            plugins: {
-                legend: { display: false },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            return context.parsed.y + ' mV';
-                        }
-                    }
-                }
-            }
-        },
-        plugins: [{
-            id: 'thresholdLines',
-            afterDraw: function(chart) {
-                const yScale = chart.scales.y;
-                const xScale = chart.scales.x;
-                
-                // Linea a 1 mV (10⁰) - BIANCA come INGV
-                const y1 = yScale.getPixelForValue(1);
-                if (y1 && y1 > 0) {
-                    const ctx2 = chart.ctx;
-                    ctx2.save();
-                    ctx2.setLineDash([4, 4]);
-                    ctx2.strokeStyle = '#ffffff';
-                    ctx2.lineWidth = 1.5;
-                    ctx2.beginPath();
-                    ctx2.moveTo(xScale.left, y1);
-                    ctx2.lineTo(xScale.right, y1);
-                    ctx2.stroke();
-                    ctx2.restore();
-                    // Etichetta
-                    ctx2.save();
-                    ctx2.fillStyle = '#ffffff';
-                    ctx2.font = '11px Arial';
-                    ctx2.fillText('10⁰', xScale.right + 5, y1 - 4);
-                    ctx2.restore();
-                }
-                
-                // Linea a 10 mV (10¹) - BIANCA come INGV
-                const y10 = yScale.getPixelForValue(10);
-                if (y10 && y10 > 0) {
-                    const ctx2 = chart.ctx;
-                    ctx2.save();
-                    ctx2.setLineDash([4, 4]);
-                    ctx2.strokeStyle = '#ffffff';
-                    ctx2.lineWidth = 1.5;
-                    ctx2.beginPath();
-                    ctx2.moveTo(xScale.left, y10);
-                    ctx2.lineTo(xScale.right, y10);
-                    ctx2.stroke();
-                    ctx2.restore();
-                    ctx2.save();
-                    ctx2.fillStyle = '#ffffff';
-                    ctx2.font = '11px Arial';
-                    ctx2.fillText('10¹', xScale.right + 5, y10 - 4);
-                    ctx2.restore();
-                }
-                
-                // Linea a 100 mV (10²) - BIANCA come INGV (se visibile)
-                const y100 = yScale.getPixelForValue(100);
-                if (y100 && y100 > 0) {
-                    const ctx2 = chart.ctx;
-                    ctx2.save();
-                    ctx2.setLineDash([4, 4]);
-                    ctx2.strokeStyle = '#ffffff';
-                    ctx2.lineWidth = 1.5;
-                    ctx2.beginPath();
-                    ctx2.moveTo(xScale.left, y100);
-                    ctx2.lineTo(xScale.right, y100);
-                    ctx2.stroke();
-                    ctx2.restore();
-                    ctx2.save();
-                    ctx2.fillStyle = '#ffffff';
-                    ctx2.font = '11px Arial';
-                    ctx2.fillText('10²', xScale.right + 5, y100 - 4);
-                    ctx2.restore();
-                }
-            }
-        }]
-    });
-}
+                plugins: [ChartAnnotation]
+            });
+        }
 
         // ============================
         // CARICAMENTO DATI
@@ -432,7 +429,6 @@
                     console.warn('Storico INGV non disponibile:', e);
                 }
 
-                // Renderizza il grafico se ci sono dati storici
                 if (historyData) {
                     renderChart(historyData);
                 } else {
@@ -448,7 +444,7 @@
                     const emoji = getEmojiForLevel(l.level);
                     html += `
                         <div class="section-title">📊 EtnaMonitor (ECNE)</div>
-                        <div class="card card-etna" style="border-left-color:${color};">
+                        <div class="card" style="border-left-color:${color};">
                             <div class="value" style="color:${color};">${l.rms} <span class="unit">nm/s</span></div>
                             <div class="label" style="color:${color};">${emoji} ${l.label || l.level}</div>
                             <div class="station">Stazione ECNE <span class="badge">${l.level}</span></div>
@@ -458,8 +454,8 @@
                 } else {
                     html += `
                         <div class="section-title">📊 EtnaMonitor (ECNE)</div>
-                        <div class="card" style="border-left-color:#475569;">
-                            <div style="color:#94a3b8;">⏳ Dati non disponibili</div>
+                        <div class="card" style="border-left-color:#ccc;">
+                            <div style="color:#999;">⏳ Dati non disponibili</div>
                         </div>
                     `;
                 }
@@ -477,15 +473,15 @@
                     });
                     html += `
                         </div>
-                        <div style="margin-top:10px;font-size:12px;color:#64748b;text-align:right;">
+                        <div style="margin-top:10px;font-size:12px;color:#666;text-align:right;">
                             Aggiornato: ${formatTime(ingvData.timestamp)} · Canale ${ingvData.channel || 'HHZ'}
                         </div>
                     `;
                 } else {
                     html += `
                         <div class="section-title">📊 INGV (stazioni)</div>
-                        <div class="card" style="border-left-color:#475569;">
-                            <div style="color:#94a3b8;">⏳ Dati INGV non disponibili</div>
+                        <div class="card" style="border-left-color:#ccc;">
+                            <div style="color:#999;">⏳ Dati INGV non disponibili</div>
                         </div>
                     `;
                 }
@@ -497,12 +493,15 @@
                 container.innerHTML = `
                     <div class="error">
                         ❌ Errore nel caricamento dei dati<br>
-                        <span style="font-size:14px;color:#94a3b8;">${error.message}</span>
+                        <span style="font-size:14px;color:#555;">${error.message}</span>
                     </div>
                 `;
             }
         }
 
+        // ============================
+        // AVVIO
+        // ============================
         loadData();
         setInterval(loadData, 60000);
     </script>
