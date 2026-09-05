@@ -6,7 +6,7 @@
     "level": "ALTO",
     "label": "Attivit\u00e0 elevata",
     "color": "#ef4444",
-    "timestamp": "2026-09-05T12:54:57.894545Z"
+    "timestamp": "2026-09-05T13:00:00.656917Z"
   },
   "thresholds": {
     "quiet_max": 4000,
@@ -50,6 +50,13 @@
     },
     {
       "timestamp": "2026-09-05T12:54:57.894545Z",
+      "rms": 1446,
+      "level": "ALTO",
+      "label": "Attivit\u00e0 elevata",
+      "color": "#ef4444"
+    },
+    {
+      "timestamp": "2026-09-05T13:00:00.656917Z",
       "rms": 1446,
       "level": "ALTO",
       "label": "Attivit\u00e0 elevata",
