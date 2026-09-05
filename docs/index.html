@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌋 Tremore vulcanico Etna</title>
+    <!-- Chart.js per il grafico -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -17,7 +19,7 @@
             padding: 20px;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
             background: #1e293b;
             border-radius: 20px;
@@ -118,6 +120,12 @@
             font-size: 14px;
             font-weight: 500;
         }
+        .chart-container {
+            background: #0f172a;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 10px;
+        }
         .source {
             margin-top: 20px;
             font-size: 12px;
@@ -161,16 +169,30 @@
             <div class="loading">⏳ Caricamento dati...</div>
         </div>
 
+        <!-- GRAFICO INGV -->
+        <div class="section-title" style="margin-top: 25px;">📈 Andamento RMS (INGV - ECNE)</div>
+        <div class="chart-container">
+            <canvas id="ingvChart"></canvas>
+            <div style="font-size:12px;color:#64748b;text-align:right;margin-top:10px;">
+                Scala logaritmica · Linee: 1 mV (giallo) e 9 mV (rosso)
+            </div>
+        </div>
+
         <div class="source">
             Fonti: <a href="https://etnamonitor.it" target="_blank">EtnaMonitor.it</a> (nm/s) 
-            e <a href="https://www.ct.ingv.it" target="_blank">INGV</a> (mV) · Dati aggiornati ogni 10 minuti
+            e <a href="https://www.ct.ingv.it" target="_blank">INGV</a> (mV) · Dati aggiornati ogni 5 minuti
         </div>
     </div>
 
     <script>
         const ETNA_URL = 'tremore.json';
         const INGV_URL = 'ingv_all.json';
+        const HISTORY_URL = 'ingv_history.json';
+        let chartInstance = null;
 
+        // ============================
+        // UTILITY
+        // ============================
         function formatTime(isoString) {
             if (!isoString) return 'N/D';
             try {
@@ -189,12 +211,13 @@
         }
 
         function getEmojiForLevel(level) {
-            const emojis = {
-                'QUIETE': '🟢',
-                'MODERATO': '🟡',
-                'ALTO': '🔴'
-            };
+            const emojis = { 'QUIETE': '🟢', 'MODERATO': '🟡', 'ALTO': '🔴' };
             return emojis[level] || '⚪';
+        }
+
+        function getColorForLevel(level) {
+            const colors = { 'QUIETE': '#22c55e', 'MODERATO': '#eab308', 'ALTO': '#ef4444' };
+            return colors[level] || '#94a3b8';
         }
 
         function createStationCard(stationName, data) {
@@ -214,6 +237,128 @@
             </div>`;
         }
 
+        // ============================
+        // GRAFICO
+        // ============================
+        function renderChart(historyData) {
+            const canvas = document.getElementById('ingvChart');
+            if (!canvas) return;
+
+            const stationData = historyData['ECNE'] || [];
+            if (stationData.length < 2) {
+                console.warn('Storico ECNE ha solo', stationData.length, 'valore/i. Servono almeno 2.');
+                return;
+            }
+
+            const labels = stationData.map(d => new Date(d.timestamp));
+            const values = stationData.map(d => d.rms_mV);
+            const colors = stationData.map(d => getColorForLevel(d.level));
+
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+
+            const ctx = canvas.getContext('2d');
+            chartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'RMS (mV)',
+                        data: values,
+                        backgroundColor: colors,
+                        borderColor: colors,
+                        borderWidth: 1,
+                        borderRadius: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    animation: { duration: 500 },
+                    scales: {
+                        y: {
+                            type: 'logarithmic',
+                            title: { display: true, text: 'RMS (mV)', color: '#94a3b8' },
+                            min: 0.08,
+                            max: 100,
+                            grid: { color: '#334155' },
+                            ticks: { color: '#94a3b8' }
+                        },
+                        x: {
+                            type: 'category',
+                            title: { display: true, text: 'Tempo', color: '#94a3b8' },
+                            grid: { display: false },
+                            ticks: {
+                                color: '#94a3b8',
+                                maxTicksLimit: 15,
+                                maxRotation: 45,
+                                minRotation: 30
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.parsed.y + ' mV';
+                                }
+                            }
+                        }
+                    }
+                },
+                plugins: [{
+                    id: 'thresholdLines',
+                    afterDraw: function(chart) {
+                        const yScale = chart.scales.y;
+                        const xScale = chart.scales.x;
+                        
+                        const y1 = yScale.getPixelForValue(1);
+                        if (y1 && y1 > 0) {
+                            const ctx2 = chart.ctx;
+                            ctx2.save();
+                            ctx2.setLineDash([5, 5]);
+                            ctx2.strokeStyle = '#eab308';
+                            ctx2.lineWidth = 2;
+                            ctx2.beginPath();
+                            ctx2.moveTo(xScale.left, y1);
+                            ctx2.lineTo(xScale.right, y1);
+                            ctx2.stroke();
+                            ctx2.restore();
+                            ctx2.save();
+                            ctx2.fillStyle = '#eab308';
+                            ctx2.font = '11px Arial';
+                            ctx2.fillText('1 mV', xScale.right + 5, y1 - 4);
+                            ctx2.restore();
+                        }
+                        
+                        const y9 = yScale.getPixelForValue(9);
+                        if (y9 && y9 > 0) {
+                            const ctx2 = chart.ctx;
+                            ctx2.save();
+                            ctx2.setLineDash([5, 5]);
+                            ctx2.strokeStyle = '#ef4444';
+                            ctx2.lineWidth = 2;
+                            ctx2.beginPath();
+                            ctx2.moveTo(xScale.left, y9);
+                            ctx2.lineTo(xScale.right, y9);
+                            ctx2.stroke();
+                            ctx2.restore();
+                            ctx2.save();
+                            ctx2.fillStyle = '#ef4444';
+                            ctx2.font = '11px Arial';
+                            ctx2.fillText('9 mV', xScale.right + 5, y9 - 4);
+                            ctx2.restore();
+                        }
+                    }
+                }]
+            });
+        }
+
+        // ============================
+        // CARICAMENTO DATI
+        // ============================
         async function loadData() {
             const container = document.getElementById('content');
 
@@ -232,6 +377,21 @@
                     if (resp.ok) ingvData = await resp.json();
                 } catch (e) {
                     console.warn('INGV non disponibile:', e);
+                }
+
+                let historyData = null;
+                try {
+                    const resp = await fetch(HISTORY_URL + '?t=' + Date.now());
+                    if (resp.ok) historyData = await resp.json();
+                } catch (e) {
+                    console.warn('Storico INGV non disponibile:', e);
+                }
+
+                // Renderizza il grafico se ci sono dati storici
+                if (historyData) {
+                    renderChart(historyData);
+                } else {
+                    console.warn('Nessun dato storico per il grafico');
                 }
 
                 let html = '';
@@ -303,4 +463,3 @@
     </script>
 </body>
 </html>
-
