@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests
+          pip install requests numpy
 
       - name: Run tremor computation
         run: python scripts/compute_tremor.py
