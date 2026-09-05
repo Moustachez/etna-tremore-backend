@@ -319,10 +319,23 @@
                             min: 0.08,
                             max: 100,
                             grid: {
-                                color: '#d0d0d0',
-                                drawTicks: true,
-                                tickLength: 5
-                            },
+                                color: function(context) {
+        // Linee solo a 1, 10, 100 mV
+        const value = context.tick.value;
+        if (value === 1 || value === 10 || value === 100) {
+            return '#000000';  // nero
+        }
+        return 'rgba(0,0,0,0)';  // trasparente (invisibile)
+    },
+    lineWidth: function(context) {
+        const value = context.tick.value;
+        if (value === 1 || value === 10 || value === 100) {
+            return 1.5;  // sottile
+        }
+        return 0;
+    },
+    drawTicks: false
+    },
                             ticks: {
                                 color: '#000000',
                                 callback: function(value) {
