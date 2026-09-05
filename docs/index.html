@@ -6,7 +6,7 @@
     <title>🌋 Tremore vulcanico Etna</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
-    <script src="storia.js"></script>
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -191,7 +191,7 @@
         // ============================
         const ETNA_URL = 'tremore.json';
         const INGV_URL = 'ingv_all.json';
-        const HISTORY_URL = null;
+        const HISTORY_URL = 'ingv_history.json'
         let chartInstance = null;
 
         // ============================
@@ -423,12 +423,13 @@
 
                 // --- DATI STORICI DA storia.js ---
                 let historyData = null;
-                if (typeof storiaData !== 'undefined' && storiaData) {
-                    historyData = storiaData;
-                    console.log('✅ Storico caricato da storia.js');
-                } else {
-                    console.warn('❌ Variabile storiaData non trovata');
-                }
+try {
+    const resp = await fetch(HISTORY_URL + '?t=' + Date.now());
+    if (resp.ok) historyData = await resp.json();
+    console.log('✅ Storico caricato da ingv_history.json');
+} catch (e) {
+    console.warn('Storico INGV non disponibile:', e);
+}
 
                 if (historyData) {
                     renderChart(historyData);
