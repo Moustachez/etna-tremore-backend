@@ -241,120 +241,163 @@
         // GRAFICO
         // ============================
         function renderChart(historyData) {
-            const canvas = document.getElementById('ingvChart');
-            if (!canvas) return;
+    const canvas = document.getElementById('ingvChart');
+    if (!canvas) return;
 
-            const stationData = historyData['ECNE'] || [];
-            if (stationData.length < 2) {
-                console.warn('Storico ECNE ha solo', stationData.length, 'valore/i. Servono almeno 2.');
-                return;
-            }
+    const stationData = historyData['ECNE'] || [];
+    if (stationData.length < 2) {
+        console.warn('Storico ECNE ha solo', stationData.length, 'valore/i. Servono almeno 2.');
+        return;
+    }
 
-            const labels = stationData.map(d => new Date(d.timestamp));
-            const values = stationData.map(d => d.rms_mV);
-            const colors = stationData.map(d => getColorForLevel(d.level));
+    const labels = stationData.map(d => new Date(d.timestamp));
+    const values = stationData.map(d => d.rms_mV);
+    const colors = stationData.map(d => getColorForLevel(d.level));
 
-            if (chartInstance) {
-                chartInstance.destroy();
-            }
+    if (chartInstance) {
+        chartInstance.destroy();
+    }
 
-            const ctx = canvas.getContext('2d');
-            chartInstance = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'RMS (mV)',
-                        data: values,
-                        backgroundColor: colors,
-                        borderColor: colors,
-                        borderWidth: 1,
-                        borderRadius: 2
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    animation: { duration: 500 },
-                    scales: {
-                        y: {
-                            type: 'logarithmic',
-                            title: { display: true, text: 'RMS (mV)', color: '#94a3b8' },
-                            min: 0.08,
-                            max: 100,
-                            grid: { color: '#334155' },
-                            ticks: { color: '#94a3b8' }
-                        },
-                        x: {
-                            type: 'category',
-                            title: { display: true, text: 'Tempo', color: '#94a3b8' },
-                            grid: { display: false },
-                            ticks: {
-                                color: '#94a3b8',
-                                maxTicksLimit: 15,
-                                maxRotation: 45,
-                                minRotation: 30
-                            }
-                        }
+    const ctx = canvas.getContext('2d');
+    chartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'RMS (mV)',
+                data: values,
+                backgroundColor: colors,
+                borderColor: colors,
+                borderWidth: 1,
+                borderRadius: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            animation: { duration: 500 },
+            scales: {
+                y: {
+                    type: 'logarithmic',
+                    title: {
+                        display: true,
+                        text: 'RMS (mV)',
+                        color: '#94a3b8',
+                        font: { size: 14, weight: 'bold' }
                     },
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.parsed.y + ' mV';
-                                }
-                            }
+                    min: 0.08,
+                    max: 100,
+                    grid: { color: '#334155' },
+                    ticks: {
+                        color: '#94a3b8',
+                        callback: function(value) {
+                            // Mostra le etichette in formato 10^0, 10^1, 10^2
+                            if (value === 0.1) return '10⁻¹';
+                            if (value === 1) return '10⁰';
+                            if (value === 10) return '10¹';
+                            if (value === 100) return '10²';
+                            return '';
                         }
                     }
                 },
-                plugins: [{
-                    id: 'thresholdLines',
-                    afterDraw: function(chart) {
-                        const yScale = chart.scales.y;
-                        const xScale = chart.scales.x;
-                        
-                        const y1 = yScale.getPixelForValue(1);
-                        if (y1 && y1 > 0) {
-                            const ctx2 = chart.ctx;
-                            ctx2.save();
-                            ctx2.setLineDash([5, 5]);
-                            ctx2.strokeStyle = '#eab308';
-                            ctx2.lineWidth = 2;
-                            ctx2.beginPath();
-                            ctx2.moveTo(xScale.left, y1);
-                            ctx2.lineTo(xScale.right, y1);
-                            ctx2.stroke();
-                            ctx2.restore();
-                            ctx2.save();
-                            ctx2.fillStyle = '#eab308';
-                            ctx2.font = '11px Arial';
-                            ctx2.fillText('1 mV', xScale.right + 5, y1 - 4);
-                            ctx2.restore();
-                        }
-                        
-                        const y9 = yScale.getPixelForValue(9);
-                        if (y9 && y9 > 0) {
-                            const ctx2 = chart.ctx;
-                            ctx2.save();
-                            ctx2.setLineDash([5, 5]);
-                            ctx2.strokeStyle = '#ef4444';
-                            ctx2.lineWidth = 2;
-                            ctx2.beginPath();
-                            ctx2.moveTo(xScale.left, y9);
-                            ctx2.lineTo(xScale.right, y9);
-                            ctx2.stroke();
-                            ctx2.restore();
-                            ctx2.save();
-                            ctx2.fillStyle = '#ef4444';
-                            ctx2.font = '11px Arial';
-                            ctx2.fillText('9 mV', xScale.right + 5, y9 - 4);
-                            ctx2.restore();
+                x: {
+                    type: 'category',
+                    title: {
+                        display: true,
+                        text: 'Tempo (UTC)',
+                        color: '#94a3b8',
+                        font: { size: 12 }
+                    },
+                    grid: { display: false },
+                    ticks: {
+                        color: '#94a3b8',
+                        maxTicksLimit: 15,
+                        maxRotation: 45,
+                        minRotation: 30
+                    }
+                }
+            },
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.parsed.y + ' mV';
                         }
                     }
-                }]
-            });
-        }
+                }
+            }
+        },
+        plugins: [{
+            id: 'thresholdLines',
+            afterDraw: function(chart) {
+                const yScale = chart.scales.y;
+                const xScale = chart.scales.x;
+                
+                // Linea a 1 mV (10⁰) - BIANCA come INGV
+                const y1 = yScale.getPixelForValue(1);
+                if (y1 && y1 > 0) {
+                    const ctx2 = chart.ctx;
+                    ctx2.save();
+                    ctx2.setLineDash([4, 4]);
+                    ctx2.strokeStyle = '#ffffff';
+                    ctx2.lineWidth = 1.5;
+                    ctx2.beginPath();
+                    ctx2.moveTo(xScale.left, y1);
+                    ctx2.lineTo(xScale.right, y1);
+                    ctx2.stroke();
+                    ctx2.restore();
+                    // Etichetta
+                    ctx2.save();
+                    ctx2.fillStyle = '#ffffff';
+                    ctx2.font = '11px Arial';
+                    ctx2.fillText('10⁰', xScale.right + 5, y1 - 4);
+                    ctx2.restore();
+                }
+                
+                // Linea a 10 mV (10¹) - BIANCA come INGV
+                const y10 = yScale.getPixelForValue(10);
+                if (y10 && y10 > 0) {
+                    const ctx2 = chart.ctx;
+                    ctx2.save();
+                    ctx2.setLineDash([4, 4]);
+                    ctx2.strokeStyle = '#ffffff';
+                    ctx2.lineWidth = 1.5;
+                    ctx2.beginPath();
+                    ctx2.moveTo(xScale.left, y10);
+                    ctx2.lineTo(xScale.right, y10);
+                    ctx2.stroke();
+                    ctx2.restore();
+                    ctx2.save();
+                    ctx2.fillStyle = '#ffffff';
+                    ctx2.font = '11px Arial';
+                    ctx2.fillText('10¹', xScale.right + 5, y10 - 4);
+                    ctx2.restore();
+                }
+                
+                // Linea a 100 mV (10²) - BIANCA come INGV (se visibile)
+                const y100 = yScale.getPixelForValue(100);
+                if (y100 && y100 > 0) {
+                    const ctx2 = chart.ctx;
+                    ctx2.save();
+                    ctx2.setLineDash([4, 4]);
+                    ctx2.strokeStyle = '#ffffff';
+                    ctx2.lineWidth = 1.5;
+                    ctx2.beginPath();
+                    ctx2.moveTo(xScale.left, y100);
+                    ctx2.lineTo(xScale.right, y100);
+                    ctx2.stroke();
+                    ctx2.restore();
+                    ctx2.save();
+                    ctx2.fillStyle = '#ffffff';
+                    ctx2.font = '11px Arial';
+                    ctx2.fillText('10²', xScale.right + 5, y100 - 4);
+                    ctx2.restore();
+                }
+            }
+        }]
+    });
+}
 
         // ============================
         // CARICAMENTO DATI
