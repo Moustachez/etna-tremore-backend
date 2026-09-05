@@ -6,6 +6,7 @@
     <title>🌋 Tremore vulcanico Etna</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <script src="storia.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -187,7 +188,7 @@
         // ============================
         const ETNA_URL = 'tremore.json';
         const INGV_URL = 'ingv_all.json';
-        const HISTORY_URL = 'history.json';
+        const HISTORY_URL = null;  // non usiamo più fetch JSON
         let chartInstance = null;
 
         // ============================
@@ -238,7 +239,7 @@
         }
 
         // ============================
-        // GRAFICO A LINEA CON BANDE (aggiornato)
+        // GRAFICO A LINEA CON BANDE
         // ============================
         function renderChart(historyData) {
             const canvas = document.getElementById('ingvChart');
@@ -250,7 +251,6 @@
                 return;
             }
 
-            // --- TUTTI i punti dello storico ---
             const labels = stationData.map(d => new Date(d.timestamp));
             const values = stationData.map(d => d.rms_mV);
 
@@ -297,10 +297,10 @@
                         data: values,
                         borderColor: '#000000',
                         backgroundColor: 'rgba(0,0,0,0)',
-                        borderWidth: 1,          // Linea sottile
-                        pointRadius: 0,           // Nessun pallino
+                        borderWidth: 1,
+                        pointRadius: 0,
                         pointHoverRadius: 4,
-                        tension: 0,               // Nessuna curvatura (linea frastagliata)
+                        tension: 0,
                         fill: false,
                         spanGaps: false
                     }]
@@ -308,7 +308,7 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: true,
-                    animation: { duration: 0 },   // Disabilita animazione per prestazioni
+                    animation: { duration: 0 },
                     scales: {
                         y: {
                             type: 'logarithmic',
@@ -337,7 +337,7 @@
                             }
                         },
                         x: {
-                            type: 'time',         // Asse temporale continuo
+                            type: 'time',
                             time: {
                                 unit: 'minute',
                                 displayFormats: {
@@ -399,12 +399,13 @@
                     console.warn('INGV non disponibile:', e);
                 }
 
+                // --- DATI STORICI DA VARIABILE GLOBALE (storia.js) ---
                 let historyData = null;
-                try {
-                    const resp = await fetch(HISTORY_URL + '?t=' + Date.now());
-                    if (resp.ok) historyData = await resp.json();
-                } catch (e) {
-                    console.warn('Storico INGV non disponibile:', e);
+                if (typeof storiaData !== 'undefined' && storiaData) {
+                    historyData = storiaData;
+                    console.log('✅ Storico caricato da storia.js');
+                } else {
+                    console.warn('❌ Variabile storiaData non trovata');
                 }
 
                 if (historyData) {
@@ -485,4 +486,3 @@
     </script>
 </body>
 </html>
-<!-- rebuild -->
