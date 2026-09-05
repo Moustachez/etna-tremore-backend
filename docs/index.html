@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌋 Tremore vulcanico Etna</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -237,7 +238,7 @@
         }
 
         // ============================
-        // GRAFICO A LINEA CON BANDE (plugin personalizzato)
+        // GRAFICO A LINEA CON BANDE (aggiornato)
         // ============================
         function renderChart(historyData) {
             const canvas = document.getElementById('ingvChart');
@@ -249,6 +250,7 @@
                 return;
             }
 
+            // --- TUTTI i punti dello storico ---
             const labels = stationData.map(d => new Date(d.timestamp));
             const values = stationData.map(d => d.rms_mV);
 
@@ -258,7 +260,7 @@
 
             const ctx = canvas.getContext('2d');
 
-            // Plugin personalizzato per disegnare le bande di colore sullo sfondo
+            // Plugin per le bande di colore
             const bandPlugin = {
                 id: 'bandPlugin',
                 beforeDraw: function(chart) {
@@ -266,7 +268,6 @@
                     const yScale = scales.y;
                     const xScale = scales.x;
 
-                    // Definisci le bande: [min, max, colore]
                     const bands = [
                         { min: 0.08, max: 1, color: 'rgba(34, 197, 94, 0.25)' },
                         { min: 1, max: 9, color: 'rgba(234, 179, 8, 0.25)' },
@@ -296,12 +297,10 @@
                         data: values,
                         borderColor: '#000000',
                         backgroundColor: 'rgba(0,0,0,0)',
-                        borderWidth: 2,
-                        pointBackgroundColor: '#000000',
-                        pointBorderColor: '#000000',
-                        pointRadius: 4,
-                        pointHoverRadius: 6,
-                        tension: 0.1,
+                        borderWidth: 1,          // Linea sottile
+                        pointRadius: 0,           // Nessun pallino
+                        pointHoverRadius: 4,
+                        tension: 0,               // Nessuna curvatura (linea frastagliata)
                         fill: false,
                         spanGaps: false
                     }]
@@ -309,7 +308,7 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: true,
-                    animation: { duration: 500 },
+                    animation: { duration: 0 },   // Disabilita animazione per prestazioni
                     scales: {
                         y: {
                             type: 'logarithmic',
@@ -338,7 +337,15 @@
                             }
                         },
                         x: {
-                            type: 'category',
+                            type: 'time',         // Asse temporale continuo
+                            time: {
+                                unit: 'minute',
+                                displayFormats: {
+                                    minute: 'HH:mm',
+                                    hour: 'HH:mm',
+                                    day: 'dd/MM'
+                                }
+                            },
                             title: {
                                 display: true,
                                 text: 'Tempo (UTC)',
@@ -348,7 +355,7 @@
                             grid: { display: false },
                             ticks: {
                                 color: '#000000',
-                                maxTicksLimit: 15,
+                                maxTicksLimit: 20,
                                 maxRotation: 45,
                                 minRotation: 30
                             }
