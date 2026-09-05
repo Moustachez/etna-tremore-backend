@@ -17,13 +17,12 @@
             padding: 20px;
         }
         .container {
-            max-width: 600px;
+            max-width: 800px;
             width: 100%;
             background: #1e293b;
             border-radius: 20px;
             padding: 30px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-            text-align: center;
         }
         h1 {
             font-size: 28px;
@@ -33,48 +32,51 @@
             justify-content: center;
             gap: 10px;
         }
-        h1 span { font-size: 32px; }
         .subtitle {
             color: #94a3b8;
             font-size: 14px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             border-bottom: 1px solid #334155;
             padding-bottom: 15px;
+            text-align: center;
         }
-        .value-container {
+        .section-title {
+            font-size: 18px;
+            color: #94a3b8;
+            margin: 20px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #334155;
+        }
+        .card {
             background: #0f172a;
             border-radius: 16px;
-            padding: 25px 20px;
-            margin-bottom: 20px;
-            transition: all 0.5s ease;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        .card-etna {
+            border-left: 6px solid #eab308;
         }
         .value {
-            font-size: 64px;
+            font-size: 48px;
             font-weight: 700;
             line-height: 1;
-            transition: color 0.5s ease;
         }
         .unit {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 400;
             color: #94a3b8;
             margin-left: 5px;
         }
         .label {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 600;
-            margin-top: 10px;
-            letter-spacing: 0.5px;
-        }
-        .station {
-            font-size: 16px;
-            color: #94a3b8;
             margin-top: 5px;
         }
-        .updated {
+        .station {
             font-size: 14px;
-            color: #64748b;
-            margin-top: 15px;
+            color: #94a3b8;
+            margin-top: 5px;
         }
         .badge {
             display: inline-block;
@@ -86,45 +88,35 @@
             background: #334155;
             color: #94a3b8;
         }
-        .history-section {
-            margin-top: 25px;
-            border-top: 1px solid #334155;
-            padding-top: 20px;
-        }
-        .history-section h3 {
-            font-size: 16px;
-            color: #94a3b8;
-            margin-bottom: 15px;
-            font-weight: 400;
-        }
-        .history-bar-container {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-        .history-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .updated {
             font-size: 13px;
+            color: #64748b;
+            margin-top: 10px;
         }
-        .history-bar {
-            flex: 1;
-            height: 16px;
-            border-radius: 8px;
-            transition: width 0.5s ease;
-            min-width: 20px;
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
         }
-        .history-time {
-            color: #94a3b8;
-            font-size: 11px;
-            min-width: 60px;
-            text-align: right;
+        .station-card {
+            background: #0f172a;
+            border-radius: 12px;
+            padding: 15px;
+            border-left: 4px solid #334155;
+            transition: all 0.3s ease;
         }
-        .history-value {
+        .station-name {
             font-weight: 600;
-            min-width: 70px;
-            text-align: right;
+            font-size: 16px;
+        }
+        .station-value {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 3px;
+        }
+        .station-label {
+            font-size: 14px;
+            font-weight: 500;
         }
         .source {
             margin-top: 20px;
@@ -132,6 +124,7 @@
             color: #475569;
             border-top: 1px solid #334155;
             padding-top: 15px;
+            text-align: center;
         }
         .source a {
             color: #60a5fa;
@@ -144,15 +137,18 @@
             color: #94a3b8;
             font-size: 18px;
             padding: 30px 0;
+            text-align: center;
         }
         .error {
             color: #f87171;
             padding: 20px;
+            text-align: center;
         }
-        @media (max-width: 480px) {
-            .value { font-size: 48px; }
-            .label { font-size: 22px; }
-            .container { padding: 20px; }
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
+            .value { font-size: 36px; }
+            .label { font-size: 20px; }
+            .container { padding: 15px; }
         }
     </style>
 </head>
@@ -166,45 +162,30 @@
         </div>
 
         <div class="source">
-            Fonte: <a href="https://etnamonitor.it" target="_blank">EtnaMonitor.it</a> (stazione ECNE)
-            <br>
-            Dati aggiornati automaticamente ogni 10 minuti
+            Fonti: <a href="https://etnamonitor.it" target="_blank">EtnaMonitor.it</a> (nm/s) 
+            e <a href="https://www.ct.ingv.it" target="_blank">INGV</a> (mV) · Dati aggiornati ogni 10 minuti
         </div>
     </div>
 
     <script>
-        // ============================
-        // CONFIGURAZIONE
-        // ============================
-        const JSON_URL = 'tremore.json';
-        const HISTORY_LIMIT = 10;
+        const ETNA_URL = 'tremore.json';
+        const INGV_URL = 'ingv_all.json';
 
-        // ============================
-        // FUNZIONI DI UTILITÀ
-        // ============================
         function formatTime(isoString) {
-    if (!isoString) return 'N/D';
-    try {
-        const date = new Date(isoString);
-        return date.toLocaleString('it-IT', {
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit'
-        });
-    } catch {
-        return isoString;
-    }
-}
-
-        function getColorForLevel(level) {
-            const colors = {
-                'QUIETE': '#22c55e',
-                'MODERATO': '#eab308',
-                'ALTO': '#ef4444'
-            };
-            return colors[level] || '#94a3b8';
+            if (!isoString) return 'N/D';
+            try {
+                const date = new Date(isoString);
+                return date.toLocaleString('it-IT', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                });
+            } catch {
+                return isoString;
+            }
         }
 
         function getEmojiForLevel(level) {
@@ -216,86 +197,90 @@
             return emojis[level] || '⚪';
         }
 
-        // ============================
-        // FUNZIONE PRINCIPALE
-        // ============================
+        function createStationCard(stationName, data) {
+            if (!data) {
+                return `<div class="station-card" style="border-left-color:#475569; opacity:0.5;">
+                    <div class="station-name">${stationName}</div>
+                    <div class="station-value" style="color:#475569;">N/D</div>
+                    <div class="station-label" style="color:#475569;">Non disponibile</div>
+                </div>`;
+            }
+            const color = data.color || '#94a3b8';
+            const emoji = getEmojiForLevel(data.level);
+            return `<div class="station-card" style="border-left-color:${color};">
+                <div class="station-name">${stationName}</div>
+                <div class="station-value" style="color:${color};">${data.rms_mV} <span style="font-size:14px;color:#94a3b8;">mV</span></div>
+                <div class="station-label" style="color:${color};">${emoji} ${data.label || data.level}</div>
+            </div>`;
+        }
+
         async function loadData() {
             const container = document.getElementById('content');
 
             try {
-                const response = await fetch(JSON_URL + '?t=' + Date.now());
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                let etnaData = null;
+                try {
+                    const resp = await fetch(ETNA_URL + '?t=' + Date.now());
+                    if (resp.ok) etnaData = await resp.json();
+                } catch (e) {
+                    console.warn('EtnaMonitor non disponibile:', e);
                 }
 
-                const data = await response.json();
-                console.log('📊 Dati ricevuti:', data);
-
-                // Controlla se ci sono dati
-                if (!data.latest && (!data.history || data.history.length === 0)) {
-                    container.innerHTML = `
-                        <div class="error">
-                            ⚠️ Nessun dato disponibile<br>
-                            <span style="font-size:14px;color:#94a3b8;">Attendi il prossimo aggiornamento</span>
-                        </div>
-                    `;
-                    return;
+                let ingvData = null;
+                try {
+                    const resp = await fetch(INGV_URL + '?t=' + Date.now());
+                    if (resp.ok) ingvData = await resp.json();
+                } catch (e) {
+                    console.warn('INGV non disponibile:', e);
                 }
 
-                // Prendi l'ultimo valore
-                const latest = data.latest || data.history[data.history.length - 1];
-                const history = data.history || [];
+                let html = '';
 
-                // Determina colore ed emoji
-                const color = latest.color || getColorForLevel(latest.level);
-                const emoji = getEmojiForLevel(latest.level);
-
-                // Costruisci la vista
-                let html = `
-                    <div class="value-container" style="border-left: 6px solid ${color};">
-                        <div class="value" style="color: ${color};">
-                            ${latest.rms}
-                            <span class="unit">nm/s</span>
-                        </div>
-                        <div class="label" style="color: ${color};">
-                            ${emoji} ${latest.label || latest.level}
-                        </div>
-                        <div class="station">
-                            Stazione ECNE
-                            <span class="badge">${latest.level}</span>
-                        </div>
-                        <div class="updated">
-                            🕐 Aggiornato: ${formatTime(latest.timestamp)}
-                        </div>
-                    </div>
-                `;
-
-                // Storico (ultimi N valori)
-                if (history.length > 0) {
-                    const reversedHistory = [...history].reverse().slice(0, HISTORY_LIMIT);
-                    const maxValue = Math.max(...history.map(h => h.rms), 1000);
-
+                // EtnaMonitor
+                if (etnaData && etnaData.latest) {
+                    const l = etnaData.latest;
+                    const color = l.color || '#eab308';
+                    const emoji = getEmojiForLevel(l.level);
                     html += `
-                        <div class="history-section">
-                            <h3>📈 Storico (ultimi ${reversedHistory.length} valori)</h3>
-                            <div class="history-bar-container">
+                        <div class="section-title">📊 EtnaMonitor (ECNE)</div>
+                        <div class="card card-etna" style="border-left-color:${color};">
+                            <div class="value" style="color:${color};">${l.rms} <span class="unit">nm/s</span></div>
+                            <div class="label" style="color:${color};">${emoji} ${l.label || l.level}</div>
+                            <div class="station">Stazione ECNE <span class="badge">${l.level}</span></div>
+                            <div class="updated">🕐 Aggiornato: ${formatTime(l.timestamp)}</div>
+                        </div>
                     `;
+                } else {
+                    html += `
+                        <div class="section-title">📊 EtnaMonitor (ECNE)</div>
+                        <div class="card" style="border-left-color:#475569;">
+                            <div style="color:#94a3b8;">⏳ Dati non disponibili</div>
+                        </div>
+                    `;
+                }
 
-                    reversedHistory.forEach(item => {
-                        const barColor = item.color || getColorForLevel(item.level);
-                        const percent = Math.min((item.rms / maxValue) * 100, 100);
-                        html += `
-                            <div class="history-item">
-                                <span style="font-size:11px;color:#94a3b8;min-width:40px;">${item.level}</span>
-                                <div class="history-bar" style="width:${percent}%;background:${barColor};"></div>
-                                <span class="history-value" style="color:${barColor};">${item.rms}</span>
-                                <span class="history-time">${formatTime(item.timestamp)}</span>
-                            </div>
-                        `;
+                // INGV
+                if (ingvData && ingvData.stations) {
+                    const stations = ingvData.stations;
+                    html += `
+                        <div class="section-title">📊 INGV (stazioni)</div>
+                        <div class="grid">
+                    `;
+                    const order = ['ECNE', 'ECPN', 'ECBD', 'EMFS'];
+                    order.forEach(key => {
+                        html += createStationCard(key, stations[key] || null);
                     });
-
                     html += `
-                            </div>
+                        </div>
+                        <div style="margin-top:10px;font-size:12px;color:#64748b;text-align:right;">
+                            Aggiornato: ${formatTime(ingvData.timestamp)} · Canale ${ingvData.channel || 'HHZ'}
+                        </div>
+                    `;
+                } else {
+                    html += `
+                        <div class="section-title">📊 INGV (stazioni)</div>
+                        <div class="card" style="border-left-color:#475569;">
+                            <div style="color:#94a3b8;">⏳ Dati INGV non disponibili</div>
                         </div>
                     `;
                 }
@@ -308,22 +293,12 @@
                     <div class="error">
                         ❌ Errore nel caricamento dei dati<br>
                         <span style="font-size:14px;color:#94a3b8;">${error.message}</span>
-                        <br><br>
-                        <span style="font-size:13px;color:#64748b;">
-                            Verifica che il file <code>tremore.json</code> sia disponibile.
-                        </span>
                     </div>
                 `;
             }
         }
 
-        // ============================
-        // AVVIO
-        // ============================
-        // Carica subito
         loadData();
-
-        // Ricarica ogni 60 secondi
         setInterval(loadData, 60000);
     </script>
 </body>
