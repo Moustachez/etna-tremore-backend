@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-06T11:29:20.484024+00:00",
+  "timestamp": "2026-09-06T11:41:21.438514+00:00",
   "network": "IV",
   "channel": "HHZ",
   "duration_seconds": 300,
@@ -10,8 +10,8 @@
   },
   "stations": {
     "ECNE": {
-      "rms_counts": 1847.53,
-      "rms_mV": 1.1897,
+      "rms_counts": 2259.02,
+      "rms_mV": 1.4546,
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
