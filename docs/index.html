@@ -321,6 +321,9 @@
                     responsive: true,
                     maintainAspectRatio: true,
                     animation: { duration: 0 },
+                    layout: {
+                        padding: { bottom: 10 }
+                    },
                     scales: {
                         y: {
                             type: 'logarithmic',
@@ -381,7 +384,8 @@
                                 color: '#ffffff',
                                 maxTicksLimit: 20,
                                 maxRotation: 45,
-                                minRotation: 30
+                                minRotation: 30,
+                                padding: 12
                             }
                         }
                     },
