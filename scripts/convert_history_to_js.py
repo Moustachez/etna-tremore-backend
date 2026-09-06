@@ -4,7 +4,7 @@ import os
 def convert_history_to_js():
     # Leggi il file JSON dello storico
     json_file = "docs/ingv_history.json"
-    js_file = "docs/storia.js"
+    js_file = "docs/data.js"
     
     if not os.path.exists(json_file):
         print("❌ ingv_history.json non trovato")
