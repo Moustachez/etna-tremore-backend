@@ -423,12 +423,12 @@
                     console.warn('INGV non disponibile:', e);
                 }
 
-                // --- DATI STORICI DA storia.js ---
+                // --- DATI STORICI DA data.js ---
                 let historyData = null;
 try {
     const resp = await fetch(HISTORY_URL + '?t=' + Date.now());
     if (resp.ok) historyData = await resp.json();
-    console.log('✅ Storico caricato da ingv_history.json');
+    console.log('✅ Storico caricato da history.json');
 } catch (e) {
     console.warn('Storico INGV non disponibile:', e);
 }
