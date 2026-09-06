@@ -97,6 +97,37 @@ def compute_all():
         print("❌ Nessuna stazione ha restituito dati")
         return
     
+    # ============================================================
+    # SALVA LO STORICO IN docs/history.json (AGGIUNTO)
+    # ============================================================
+    history_file = "docs/history.json"
+    history_data = {}
+    if os.path.exists(history_file):
+        with open(history_file, 'r') as f:
+            try:
+                history_data = json.load(f)
+            except:
+                history_data = {}
+
+    for station, data in results.items():
+        if station not in history_data:
+            history_data[station] = []
+        history_data[station].append({
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "rms_mV": data["rms_mV"],
+            "level": data["level"],
+            "label": data["label"],
+            "color": data["color"]
+        })
+        if len(history_data[station]) > 500:
+            history_data[station] = history_data[station][-500:]
+
+    with open(history_file, 'w') as f:
+        json.dump(history_data, f, indent=2)
+
+    print(f"💾 Storico salvato in {history_file}")
+    # ============================================================
+
     # Prepara output
     output = {
         "timestamp": datetime.now(timezone.utc).isoformat(),
