@@ -4,7 +4,7 @@
     "level": "QUIETE",
     "label": "Quiete",
     "color": "#22c55e",
-    "timestamp": "2026-09-06T09:07:30.149391Z"
+    "timestamp": "2026-09-06T09:21:16.359463Z"
   },
   "history": [
     {
@@ -744,6 +744,13 @@
     },
     {
       "timestamp": "2026-09-06T09:07:30.149391Z",
+      "rms": 1500,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-06T09:21:16.359463Z",
       "rms": 1500,
       "level": "QUIETE",
       "label": "Quiete",
