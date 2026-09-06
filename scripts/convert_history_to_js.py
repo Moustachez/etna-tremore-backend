@@ -3,11 +3,11 @@ import os
 
 def convert_history_to_js():
     # Leggi il file JSON dello storico
-    json_file = "docs/ingv_history.json"
+    json_file = "docs/history.json"
     js_file = "docs/data.js"
     
     if not os.path.exists(json_file):
-        print("❌ ingv_history.json non trovato")
+        print("❌ history.json non trovato")
         return
     
     # Carica i dati JSON
