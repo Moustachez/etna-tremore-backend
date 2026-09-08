@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-08T02:47:44.641309+00:00",
+  "timestamp": "2026-09-08T02:58:30.876450+00:00",
   "network": "IV",
   "channel": "HHZ",
   "duration_seconds": 300,
@@ -10,29 +10,22 @@
   },
   "stations": {
     "ECNE": {
-      "rms_counts": 2416.94,
-      "rms_mV": 1.5563,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    "ECPN": {
-      "rms_counts": 3261.21,
-      "rms_mV": 2.0999,
+      "rms_counts": 1702.88,
+      "rms_mV": 1.0965,
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
     },
     "ECBD": {
-      "rms_counts": 269.85,
-      "rms_mV": 0.1738,
+      "rms_counts": 166.51,
+      "rms_mV": 0.1072,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
     },
     "EMFS": {
-      "rms_counts": 885.73,
-      "rms_mV": 0.5703,
+      "rms_counts": 668.53,
+      "rms_mV": 0.4305,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
