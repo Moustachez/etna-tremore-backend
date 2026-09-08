@@ -2885,6 +2885,13 @@ var storiaData = {
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-08T17:32:25.084768+00:00",
+      "rms_mV": 0.1218,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "EMFS": [
@@ -4193,6 +4200,13 @@ var storiaData = {
     {
       "timestamp": "2026-09-08T17:18:41.038732+00:00",
       "rms_mV": 0.4892,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-08T17:32:25.084768+00:00",
+      "rms_mV": 0.418,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
