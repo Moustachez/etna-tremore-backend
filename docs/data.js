@@ -5216,6 +5216,13 @@ var storiaData = {
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-10T14:25:15.222570+00:00",
+      "rms_mV": 0.2027,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "EMFS": [
@@ -9235,6 +9242,13 @@ var storiaData = {
     {
       "timestamp": "2026-09-10T14:08:32.415357+00:00",
       "rms_mV": 1.6084,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-10T14:25:15.222570+00:00",
+      "rms_mV": 1.4749,
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
