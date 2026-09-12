@@ -1,13 +1,6 @@
 {
   "ECNE": [
     {
-      "timestamp": "2026-09-07T17:27:19.973081+00:00",
-      "rms_mV": 1.173,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
       "timestamp": "2026-09-07T17:41:30.253885+00:00",
       "rms_mV": 1.2054,
       "level": "MODERATO",
@@ -3496,6 +3489,13 @@
     {
       "timestamp": "2026-09-12T20:49:23.973997+00:00",
       "rms_mV": 1.2827,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-12T20:59:01.408472+00:00",
+      "rms_mV": 1.1746,
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
