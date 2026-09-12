@@ -6847,6 +6847,13 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-12T01:48:13.506848+00:00",
+      "rms_mV": 0.1136,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "EMFS": [
@@ -10080,6 +10087,13 @@
     {
       "timestamp": "2026-09-12T01:36:52.251216+00:00",
       "rms_mV": 0.2979,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-12T01:48:13.506848+00:00",
+      "rms_mV": 0.3501,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
