@@ -1,13 +1,6 @@
 {
   "ECNE": [
     {
-      "timestamp": "2026-09-06T19:31:57.331556+00:00",
-      "rms_mV": 0.964,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
-    {
       "timestamp": "2026-09-06T19:42:29.896947+00:00",
       "rms_mV": 0.9441,
       "level": "QUIETE",
@@ -3499,6 +3492,13 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-12T01:36:52.251216+00:00",
+      "rms_mV": 1.0193,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
     }
   ],
   "ECBD": [
@@ -6840,6 +6840,13 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-12T01:36:52.251216+00:00",
+      "rms_mV": 0.0965,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "EMFS": [
@@ -10069,6 +10076,13 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-12T01:36:52.251216+00:00",
+      "rms_mV": 0.2979,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECPN": [
@@ -12294,6 +12308,13 @@
     {
       "timestamp": "2026-09-12T01:24:51.123021+00:00",
       "rms_mV": 0.8259,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-12T01:36:52.251216+00:00",
+      "rms_mV": 0.7473,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
