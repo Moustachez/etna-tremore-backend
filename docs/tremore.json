@@ -1,10 +1,10 @@
 {
   "latest": {
-    "rms": 1261,
+    "rms": 1353,
     "level": "MODERATO",
     "label": "Attivit\u00e0 moderata",
     "color": "#eab308",
-    "timestamp": "2026-09-12T20:45:00.421033Z"
+    "timestamp": "2026-09-12T20:55:39.050075Z"
   },
   "history": [
     {
@@ -5925,6 +5925,13 @@
     {
       "timestamp": "2026-09-12T20:45:00.421033Z",
       "rms": 1261,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-12T20:55:39.050075Z",
+      "rms": 1353,
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
