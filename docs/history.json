@@ -1,13 +1,6 @@
 {
   "ECNE": [
     {
-      "timestamp": "2026-09-08T12:19:29.029312+00:00",
-      "rms_mV": 1.2708,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
       "timestamp": "2026-09-08T12:40:39.926006+00:00",
       "rms_mV": 1.5746,
       "level": "MODERATO",
@@ -3499,16 +3492,16 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
-    }
-  ],
-  "ECBD": [
+    },
     {
-      "timestamp": "2026-09-07T17:52:34.596884+00:00",
-      "rms_mV": 0.1256,
+      "timestamp": "2026-09-13T15:08:50.756016+00:00",
+      "rms_mV": 0.9233,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
-    },
+    }
+  ],
+  "ECBD": [
     {
       "timestamp": "2026-09-07T18:04:36.963816+00:00",
       "rms_mV": 0.1316,
@@ -6998,6 +6991,13 @@
     {
       "timestamp": "2026-09-13T14:55:06.156149+00:00",
       "rms_mV": 0.0875,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-13T15:08:50.756016+00:00",
+      "rms_mV": 0.0846,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
