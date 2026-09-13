@@ -1,10 +1,10 @@
 {
   "latest": {
-    "rms": 1500,
+    "rms": 1357,
     "level": "QUIETE",
     "label": "Quiete",
     "color": "#22c55e",
-    "timestamp": "2026-09-13T08:41:24.014193Z"
+    "timestamp": "2026-09-13T09:08:19.494991Z"
   },
   "history": [
     {
@@ -6331,6 +6331,13 @@
     {
       "timestamp": "2026-09-13T08:41:24.014193Z",
       "rms": 1500,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-13T09:08:19.494991Z",
+      "rms": 1357,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
