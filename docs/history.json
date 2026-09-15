@@ -1,13 +1,6 @@
 {
   "ECNE": [
     {
-      "timestamp": "2026-09-10T11:21:32.552328+00:00",
-      "rms_mV": 2.1145,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
       "timestamp": "2026-09-10T11:35:21.312322+00:00",
       "rms_mV": 1.7603,
       "level": "MODERATO",
@@ -3499,16 +3492,16 @@
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-15T14:35:58.531165+00:00",
+      "rms_mV": 1.8615,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
     }
   ],
   "ECBD": [
-    {
-      "timestamp": "2026-09-09T18:12:47.479561+00:00",
-      "rms_mV": 0.1175,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
     {
       "timestamp": "2026-09-09T18:32:44.939097+00:00",
       "rms_mV": 0.1079,
@@ -7001,16 +6994,16 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
-    }
-  ],
-  "EMFS": [
+    },
     {
-      "timestamp": "2026-09-09T11:33:08.644693+00:00",
-      "rms_mV": 0.4828,
+      "timestamp": "2026-09-15T14:35:58.531165+00:00",
+      "rms_mV": 0.2214,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
-    },
+    }
+  ],
+  "EMFS": [
     {
       "timestamp": "2026-09-09T11:47:07.493040+00:00",
       "rms_mV": 0.5695,
@@ -10503,6 +10496,13 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-15T14:35:58.531165+00:00",
+      "rms_mV": 0.9289,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECPN": [
@@ -13750,6 +13750,13 @@
     {
       "timestamp": "2026-09-15T14:20:08.704581+00:00",
       "rms_mV": 3.8708,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-15T14:35:58.531165+00:00",
+      "rms_mV": 4.2387,
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
