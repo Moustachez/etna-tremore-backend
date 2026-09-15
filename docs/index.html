@@ -265,10 +265,12 @@
             }
 
             // ============================
-            // MINIMO DINAMICO PER L'ASSE Y
+            // MINIMO E MASSIMO DINAMICI PER L'ASSE Y
             // ============================
             const minValue = Math.min(...values);
+            const maxValue = Math.max(...values);
             const dynamicMin = Math.max(0.08, minValue / 2);
+            const dynamicMax = Math.max(10, maxValue * 1.5);
 
             const ctx = canvas.getContext('2d');
 
@@ -281,9 +283,9 @@
                     const xScale = scales.x;
 
                     const bands = [
-                        { min: 0.08, max: 3.55, color: 'rgba(34, 197, 94, 0.30)' },
-                        { min: 3.55, max: 9.0, color: 'rgba(234, 179, 8, 0.30)' },
-                        { min: 9.0, max: 100, color: 'rgba(239, 68, 68, 0.30)' }
+                        { min: 0.08, max: 2.55, color: 'rgba(34, 197, 94, 0.30)' },
+                        { min: 2.55, max: 9.0, color: 'rgba(234, 179, 8, 0.30)' },
+                        { min: 9.0, max: dynamicMax, color: 'rgba(239, 68, 68, 0.30)' }
                     ];
 
                     bands.forEach(band => {
@@ -334,7 +336,7 @@
                                 font: { size: 14, weight: 'bold' }
                             },
                             min: dynamicMin,   // <-- MINIMO DINAMICO
-                            max: 100,
+                            max: dynamicMax,
                             grid: {
                                 color: function(context) {
                                     const value = context.tick.value;
