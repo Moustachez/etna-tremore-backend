@@ -1,13 +1,6 @@
 {
   "ECNE": [
     {
-      "timestamp": "2026-09-10T04:15:25.149127+00:00",
-      "rms_mV": 1.4518,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
       "timestamp": "2026-09-10T04:32:00.523651+00:00",
       "rms_mV": 1.2878,
       "level": "MODERATO",
@@ -3499,16 +3492,16 @@
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
-    }
-  ],
-  "ECBD": [
+    },
     {
-      "timestamp": "2026-09-09T11:17:18.686899+00:00",
-      "rms_mV": 0.169,
+      "timestamp": "2026-09-15T06:46:38.019221+00:00",
+      "rms_mV": 0.9965,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
-    },
+    }
+  ],
+  "ECBD": [
     {
       "timestamp": "2026-09-09T11:33:08.644693+00:00",
       "rms_mV": 0.1556,
@@ -7001,16 +6994,16 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
-    }
-  ],
-  "EMFS": [
+    },
     {
-      "timestamp": "2026-09-09T04:12:30.950670+00:00",
-      "rms_mV": 0.4117,
+      "timestamp": "2026-09-15T06:46:38.019221+00:00",
+      "rms_mV": 0.113,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
-    },
+    }
+  ],
+  "EMFS": [
     {
       "timestamp": "2026-09-09T04:28:58.315053+00:00",
       "rms_mV": 0.4467,
@@ -10503,6 +10496,13 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-15T06:46:38.019221+00:00",
+      "rms_mV": 0.5154,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECPN": [
@@ -13603,6 +13603,13 @@
     {
       "timestamp": "2026-09-15T06:02:13.814134+00:00",
       "rms_mV": 1.7503,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-15T06:46:38.019221+00:00",
+      "rms_mV": 2.0927,
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
