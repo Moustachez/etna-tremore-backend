@@ -1,13 +1,6 @@
 {
   "ECNE": [
     {
-      "timestamp": "2026-09-10T04:32:00.523651+00:00",
-      "rms_mV": 1.2878,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
       "timestamp": "2026-09-10T04:47:05.897022+00:00",
       "rms_mV": 1.4282,
       "level": "MODERATO",
@@ -3499,16 +3492,16 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-15T07:01:21.520292+00:00",
+      "rms_mV": 1.0768,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
     }
   ],
   "ECBD": [
-    {
-      "timestamp": "2026-09-09T11:33:08.644693+00:00",
-      "rms_mV": 0.1556,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
     {
       "timestamp": "2026-09-09T11:47:07.493040+00:00",
       "rms_mV": 0.1708,
@@ -7001,16 +6994,16 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
-    }
-  ],
-  "EMFS": [
+    },
     {
-      "timestamp": "2026-09-09T04:28:58.315053+00:00",
-      "rms_mV": 0.4467,
+      "timestamp": "2026-09-15T07:01:21.520292+00:00",
+      "rms_mV": 0.1186,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
-    },
+    }
+  ],
+  "EMFS": [
     {
       "timestamp": "2026-09-09T04:44:49.837245+00:00",
       "rms_mV": 0.4684,
@@ -10503,6 +10496,13 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-15T07:01:21.520292+00:00",
+      "rms_mV": 0.4973,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECPN": [
@@ -13610,6 +13610,13 @@
     {
       "timestamp": "2026-09-15T06:46:38.019221+00:00",
       "rms_mV": 2.0927,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-15T07:01:21.520292+00:00",
+      "rms_mV": 1.8722,
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
