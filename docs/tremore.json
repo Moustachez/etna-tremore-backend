@@ -1,19 +1,12 @@
 {
   "latest": {
-    "rms": 500,
-    "level": "QUIETE",
-    "label": "Quiete",
-    "color": "#22c55e",
-    "timestamp": "2026-09-15T09:21:41.172002Z"
+    "rms": 1415,
+    "level": "MODERATO",
+    "label": "Attivit\u00e0 moderata",
+    "color": "#eab308",
+    "timestamp": "2026-09-15T09:38:37.339277Z"
   },
   "history": [
-    {
-      "timestamp": "2026-09-06T11:30:41.382815Z",
-      "rms": 1500,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
     {
       "timestamp": "2026-09-06T11:40:53.195367Z",
       "rms": 1500,
@@ -7006,6 +6999,13 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-15T09:38:37.339277Z",
+      "rms": 1415,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
     }
   ]
 }
