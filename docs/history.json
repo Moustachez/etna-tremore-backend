@@ -19839,6 +19839,14 @@
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-16T09:28:07.610000+00:00",
+      "rms_counts": 5628.62,
+      "rms_mV": 3.6244,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
     }
   ]
 }
