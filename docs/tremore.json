@@ -4,16 +4,9 @@
     "level": "QUIETE",
     "label": "Quiete",
     "color": "#22c55e",
-    "timestamp": "2026-09-16T18:50:03.336589Z"
+    "timestamp": "2026-09-16T18:58:54.444305Z"
   },
   "history": [
-    {
-      "timestamp": "2026-09-07T17:55:37.083757Z",
-      "rms": 1101,
-      "level": "ALTO",
-      "label": "Attivit\u00e0 elevata",
-      "color": "#ef4444"
-    },
     {
       "timestamp": "2026-09-07T18:08:27.881081Z",
       "rms": 1138,
@@ -7002,6 +6995,13 @@
     },
     {
       "timestamp": "2026-09-16T18:50:03.336589Z",
+      "rms": 500,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-16T18:58:54.444305Z",
       "rms": 500,
       "level": "QUIETE",
       "label": "Quiete",
