@@ -10187,6 +10187,78 @@
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-17T17:34:34.370000+00:00",
+      "rms_counts": 1991.29,
+      "rms_mV": 1.2822,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-17T17:35:04.370000+00:00",
+      "rms_counts": 2190.89,
+      "rms_mV": 1.4107,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-17T17:35:34.370000+00:00",
+      "rms_counts": 1484.48,
+      "rms_mV": 0.9559,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-17T17:36:04.370000+00:00",
+      "rms_counts": 1943.3,
+      "rms_mV": 1.2513,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-17T17:36:34.370000+00:00",
+      "rms_counts": 1703.55,
+      "rms_mV": 1.0969,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-17T17:37:04.370000+00:00",
+      "rms_counts": 1706.45,
+      "rms_mV": 1.0988,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-17T17:37:34.370000+00:00",
+      "rms_counts": 2706.91,
+      "rms_mV": 1.743,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-17T17:38:04.370000+00:00",
+      "rms_counts": 2023.72,
+      "rms_mV": 1.3031,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-17T17:38:34.370000+00:00",
+      "rms_counts": 2040.61,
+      "rms_mV": 1.314,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
     }
   ],
   "ECBD": [
@@ -19582,6 +19654,22 @@
       "timestamp": "2026-09-17T17:24:16.680000+00:00",
       "rms_counts": 284.56,
       "rms_mV": 0.1832,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-17T17:34:36.340000+00:00",
+      "rms_counts": 231.2,
+      "rms_mV": 0.1489,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-17T17:35:06.340000+00:00",
+      "rms_counts": 235.67,
+      "rms_mV": 0.1518,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
