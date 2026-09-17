@@ -30287,6 +30287,46 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-17T22:57:08.210000+00:00",
+      "rms_counts": 995.07,
+      "rms_mV": 0.6407,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-17T22:57:38.210000+00:00",
+      "rms_counts": 816.63,
+      "rms_mV": 0.5258,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-17T22:58:08.210000+00:00",
+      "rms_counts": 875.53,
+      "rms_mV": 0.5638,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-17T22:58:38.210000+00:00",
+      "rms_counts": 872.16,
+      "rms_mV": 0.5616,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-17T22:59:08.210000+00:00",
+      "rms_counts": 822.5,
+      "rms_mV": 0.5296,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECPN": [
