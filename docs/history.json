@@ -8363,6 +8363,14 @@
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-17T04:42:22.620000+00:00",
+      "rms_counts": 1978.02,
+      "rms_mV": 1.2737,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
     }
   ],
   "ECBD": [
@@ -23052,6 +23060,14 @@
       "timestamp": "2026-09-17T04:27:56.070000+00:00",
       "rms_counts": 1218.78,
       "rms_mV": 0.7848,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-17T04:42:29.070000+00:00",
+      "rms_counts": 863.74,
+      "rms_mV": 0.5562,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
