@@ -24321,6 +24321,30 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-18T07:37:08.940000+00:00",
+      "rms_counts": 206.16,
+      "rms_mV": 0.1327,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-18T07:37:38.940000+00:00",
+      "rms_counts": 162.17,
+      "rms_mV": 0.1044,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-18T07:38:08.940000+00:00",
+      "rms_counts": 164.21,
+      "rms_mV": 0.1057,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "EMFS": [
