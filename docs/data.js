@@ -14635,6 +14635,30 @@ var storiaData = {
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-18T18:52:38.960000+00:00",
+      "rms_counts": 852.0,
+      "rms_mV": 0.5486,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-18T18:53:08.960000+00:00",
+      "rms_counts": 1003.83,
+      "rms_mV": 0.6464,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-18T18:53:38.960000+00:00",
+      "rms_counts": 1394.93,
+      "rms_mV": 0.8982,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECBD": [
@@ -45556,6 +45580,46 @@ var storiaData = {
       "timestamp": "2026-09-18T17:46:40.140000+00:00",
       "rms_counts": 1798.05,
       "rms_mV": 1.1578,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-18T18:52:39.920000+00:00",
+      "rms_counts": 1342.9,
+      "rms_mV": 0.8647,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-18T18:53:09.920000+00:00",
+      "rms_counts": 1601.34,
+      "rms_mV": 1.0311,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-18T18:53:39.920000+00:00",
+      "rms_counts": 2911.83,
+      "rms_mV": 1.875,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-18T18:54:09.920000+00:00",
+      "rms_counts": 2775.94,
+      "rms_mV": 1.7875,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-18T18:54:39.920000+00:00",
+      "rms_counts": 2398.12,
+      "rms_mV": 1.5442,
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
