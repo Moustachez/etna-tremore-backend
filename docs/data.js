@@ -27121,6 +27121,14 @@ var storiaData = {
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-18T16:59:50.480000+00:00",
+      "rms_counts": 149.46,
+      "rms_mV": 0.0962,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "EMFS": [
