@@ -14163,6 +14163,14 @@ var storiaData = {
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-18T15:53:29.700000+00:00",
+      "rms_counts": 1305.59,
+      "rms_mV": 0.8407,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECBD": [
