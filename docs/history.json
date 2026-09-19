@@ -18635,6 +18635,38 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-19T17:15:30.550000+00:00",
+      "rms_counts": 1706.66,
+      "rms_mV": 1.0989,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-19T17:16:00.550000+00:00",
+      "rms_counts": 1425.38,
+      "rms_mV": 0.9178,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-19T17:16:30.550000+00:00",
+      "rms_counts": 1364.69,
+      "rms_mV": 0.8787,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-19T17:17:00.550000+00:00",
+      "rms_counts": 1368.56,
+      "rms_mV": 0.8812,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECBD": [
