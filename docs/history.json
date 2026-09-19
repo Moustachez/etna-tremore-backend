@@ -17107,6 +17107,22 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-19T09:17:16.650000+00:00",
+      "rms_counts": 1115.49,
+      "rms_mV": 0.7183,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-19T09:17:46.650000+00:00",
+      "rms_counts": 1552.46,
+      "rms_mV": 0.9997,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECBD": [
