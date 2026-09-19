@@ -17083,6 +17083,30 @@ var storiaData = {
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-19T09:02:05.280000+00:00",
+      "rms_counts": 1189.95,
+      "rms_mV": 0.7662,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-19T09:02:35.280000+00:00",
+      "rms_counts": 1599.03,
+      "rms_mV": 1.0296,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-19T09:03:05.280000+00:00",
+      "rms_counts": 1534.7,
+      "rms_mV": 0.9882,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECBD": [
