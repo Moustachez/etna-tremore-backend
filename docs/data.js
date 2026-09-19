@@ -15819,6 +15819,78 @@ var storiaData = {
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-19T02:00:54.870000+00:00",
+      "rms_counts": 1699.32,
+      "rms_mV": 1.0942,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-19T02:01:24.870000+00:00",
+      "rms_counts": 1642.0,
+      "rms_mV": 1.0573,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-19T02:01:54.870000+00:00",
+      "rms_counts": 1315.71,
+      "rms_mV": 0.8472,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-19T02:02:24.870000+00:00",
+      "rms_counts": 1443.5,
+      "rms_mV": 0.9295,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-19T02:02:54.870000+00:00",
+      "rms_counts": 1533.33,
+      "rms_mV": 0.9873,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-19T02:03:24.870000+00:00",
+      "rms_counts": 1691.79,
+      "rms_mV": 1.0894,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-19T02:03:54.870000+00:00",
+      "rms_counts": 1369.75,
+      "rms_mV": 0.882,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-19T02:04:24.870000+00:00",
+      "rms_counts": 1588.48,
+      "rms_mV": 1.0228,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-19T02:04:54.870000+00:00",
+      "rms_counts": 1311.35,
+      "rms_mV": 0.8444,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECBD": [
