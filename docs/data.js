@@ -17411,6 +17411,22 @@ var storiaData = {
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-19T10:42:34.990000+00:00",
+      "rms_counts": 1347.59,
+      "rms_mV": 0.8677,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-19T10:43:04.990000+00:00",
+      "rms_counts": 1324.96,
+      "rms_mV": 0.8532,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECBD": [
