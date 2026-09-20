@@ -19643,6 +19643,22 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T00:38:49.240000+00:00",
+      "rms_counts": 1464.71,
+      "rms_mV": 0.9432,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T00:39:19.240000+00:00",
+      "rms_counts": 1649.96,
+      "rms_mV": 1.0624,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
     }
   ],
   "ECBD": [
