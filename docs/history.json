@@ -21515,6 +21515,46 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T10:13:46.480000+00:00",
+      "rms_counts": 1490.09,
+      "rms_mV": 0.9595,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T10:14:16.480000+00:00",
+      "rms_counts": 1240.08,
+      "rms_mV": 0.7985,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T10:14:46.480000+00:00",
+      "rms_counts": 1021.55,
+      "rms_mV": 0.6578,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T10:15:16.480000+00:00",
+      "rms_counts": 1189.72,
+      "rms_mV": 0.7661,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T10:15:46.480000+00:00",
+      "rms_counts": 1289.88,
+      "rms_mV": 0.8306,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECBD": [
@@ -61775,6 +61815,38 @@
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-20T10:13:47.250000+00:00",
+      "rms_counts": 2261.71,
+      "rms_mV": 1.4563,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-20T10:14:17.250000+00:00",
+      "rms_counts": 1661.76,
+      "rms_mV": 1.07,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-20T10:14:47.250000+00:00",
+      "rms_counts": 1218.92,
+      "rms_mV": 0.7849,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T10:15:17.250000+00:00",
+      "rms_counts": 1306.94,
+      "rms_mV": 0.8416,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ]
 }
