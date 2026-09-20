@@ -19931,6 +19931,78 @@ var storiaData = {
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T01:55:51.890000+00:00",
+      "rms_counts": 1776.37,
+      "rms_mV": 1.1438,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-20T01:56:21.890000+00:00",
+      "rms_counts": 1664.53,
+      "rms_mV": 1.0718,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-20T01:56:51.890000+00:00",
+      "rms_counts": 1505.63,
+      "rms_mV": 0.9695,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T01:57:21.890000+00:00",
+      "rms_counts": 1785.26,
+      "rms_mV": 1.1496,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-20T01:57:51.890000+00:00",
+      "rms_counts": 1352.49,
+      "rms_mV": 0.8709,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T01:58:21.890000+00:00",
+      "rms_counts": 1266.23,
+      "rms_mV": 0.8153,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T01:58:51.890000+00:00",
+      "rms_counts": 1390.51,
+      "rms_mV": 0.8954,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T01:59:21.890000+00:00",
+      "rms_counts": 1440.48,
+      "rms_mV": 0.9275,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T01:59:51.890000+00:00",
+      "rms_counts": 1276.39,
+      "rms_mV": 0.8219,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECBD": [
@@ -36862,6 +36934,14 @@ var storiaData = {
       "timestamp": "2026-09-20T01:46:18.080000+00:00",
       "rms_counts": 198.41,
       "rms_mV": 0.1278,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T01:55:53.950000+00:00",
+      "rms_counts": 206.49,
+      "rms_mV": 0.133,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
