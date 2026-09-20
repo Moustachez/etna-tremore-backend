@@ -20843,6 +20843,38 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T06:48:21.230000+00:00",
+      "rms_counts": 1286.35,
+      "rms_mV": 0.8283,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T06:48:51.230000+00:00",
+      "rms_counts": 1179.21,
+      "rms_mV": 0.7593,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T06:49:21.230000+00:00",
+      "rms_counts": 1288.98,
+      "rms_mV": 0.83,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T06:49:51.230000+00:00",
+      "rms_counts": 1158.52,
+      "rms_mV": 0.746,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECBD": [
