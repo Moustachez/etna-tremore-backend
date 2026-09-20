@@ -21187,6 +21187,30 @@ var storiaData = {
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T08:44:16.710000+00:00",
+      "rms_counts": 1486.4,
+      "rms_mV": 0.9571,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T08:44:46.710000+00:00",
+      "rms_counts": 1305.96,
+      "rms_mV": 0.8409,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T08:45:16.710000+00:00",
+      "rms_counts": 1380.69,
+      "rms_mV": 0.889,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECBD": [
@@ -39038,6 +39062,22 @@ var storiaData = {
       "timestamp": "2026-09-20T08:35:36.270000+00:00",
       "rms_counts": 154.47,
       "rms_mV": 0.0995,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T08:44:18.160000+00:00",
+      "rms_counts": 183.54,
+      "rms_mV": 0.1182,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T08:44:48.160000+00:00",
+      "rms_counts": 188.95,
+      "rms_mV": 0.1217,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
