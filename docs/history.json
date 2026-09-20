@@ -1,34 +1,6 @@
 {
   "ECNE": [
     {
-      "timestamp": "2026-09-11T17:36:52.121938+00:00",
-      "rms_mV": 1.1466,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
-      "timestamp": "2026-09-11T17:47:10.609421+00:00",
-      "rms_mV": 1.0526,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
-      "timestamp": "2026-09-11T17:57:08.129504+00:00",
-      "rms_mV": 1.1417,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
-      "timestamp": "2026-09-11T18:15:25.916475+00:00",
-      "rms_mV": 1.1252,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
       "timestamp": "2026-09-11T18:34:01.543418+00:00",
       "rms_mV": 1.1466,
       "level": "MODERATO",
@@ -22631,6 +22603,38 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T19:28:47.640000+00:00",
+      "rms_counts": 1924.41,
+      "rms_mV": 1.2392,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-20T19:29:17.640000+00:00",
+      "rms_counts": 1613.33,
+      "rms_mV": 1.0388,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-20T19:29:47.640000+00:00",
+      "rms_counts": 1710.76,
+      "rms_mV": 1.1016,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-20T19:30:17.640000+00:00",
+      "rms_counts": 1666.15,
+      "rms_mV": 1.0729,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
     }
   ],
   "ECBD": [
@@ -41965,6 +41969,62 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T19:28:48.980000+00:00",
+      "rms_counts": 224.87,
+      "rms_mV": 0.1448,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T19:29:18.980000+00:00",
+      "rms_counts": 198.8,
+      "rms_mV": 0.128,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T19:29:48.980000+00:00",
+      "rms_counts": 211.95,
+      "rms_mV": 0.1365,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T19:30:18.980000+00:00",
+      "rms_counts": 199.0,
+      "rms_mV": 0.1281,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T19:30:48.980000+00:00",
+      "rms_counts": 182.16,
+      "rms_mV": 0.1173,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T19:31:18.980000+00:00",
+      "rms_counts": 198.06,
+      "rms_mV": 0.1275,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T19:31:48.980000+00:00",
+      "rms_counts": 211.32,
+      "rms_mV": 0.1361,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "EMFS": [
@@ -55624,6 +55684,22 @@
       "timestamp": "2026-09-20T19:21:13.350000+00:00",
       "rms_counts": 547.56,
       "rms_mV": 0.3526,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T19:28:49.510000+00:00",
+      "rms_counts": 682.48,
+      "rms_mV": 0.4395,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-20T19:29:19.510000+00:00",
+      "rms_counts": 624.49,
+      "rms_mV": 0.4021,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
