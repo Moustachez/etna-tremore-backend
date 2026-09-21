@@ -1,13 +1,6 @@
 var storiaData = {
   "ECNE": [
     {
-      "timestamp": "2026-09-14T04:00:02.238870+00:00",
-      "rms_mV": 0.7478,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
-    {
       "timestamp": "2026-09-14T04:19:35.611808+00:00",
       "rms_mV": 1.0018,
       "level": "MODERATO",
@@ -22880,6 +22873,14 @@ var storiaData = {
       "timestamp": "2026-09-21T07:31:03.490000+00:00",
       "rms_counts": 1834.22,
       "rms_mV": 1.1811,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-21T07:46:02.440000+00:00",
+      "rms_counts": 1723.3,
+      "rms_mV": 1.1097,
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
@@ -58764,6 +58765,14 @@ var storiaData = {
       "timestamp": "2026-09-21T07:31:05.690000+00:00",
       "rms_counts": 630.2,
       "rms_mV": 0.4058,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-21T07:46:05.150000+00:00",
+      "rms_counts": 541.15,
+      "rms_mV": 0.3485,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
