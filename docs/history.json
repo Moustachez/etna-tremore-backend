@@ -69155,6 +69155,22 @@
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-21T08:54:35.620000+00:00",
+      "rms_counts": 1503.83,
+      "rms_mV": 0.9683,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-21T08:55:05.620000+00:00",
+      "rms_counts": 2007.63,
+      "rms_mV": 1.2927,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
     }
   ]
 }
