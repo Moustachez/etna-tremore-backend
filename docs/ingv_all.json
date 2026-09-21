@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-21T00:59:49.433597+00:00",
+  "timestamp": "2026-09-21T01:17:02.906734+00:00",
   "network": "IV",
   "channel": "HHZ",
   "duration_seconds": 300,
@@ -11,22 +11,15 @@
   },
   "stations": {
     "ECNE": {
-      "rms_counts": 1266.09,
-      "rms_mV": 0.8153,
+      "rms_counts": 1392.38,
+      "rms_mV": 0.8966,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
     },
     "ECBD": {
-      "rms_counts": 165.48,
-      "rms_mV": 0.1066,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
-    "EMFS": {
-      "rms_counts": 489.12,
-      "rms_mV": 0.315,
+      "rms_counts": 188.44,
+      "rms_mV": 0.1213,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
