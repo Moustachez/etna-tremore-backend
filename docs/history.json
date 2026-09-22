@@ -62731,6 +62731,22 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-22T02:15:50.740000+00:00",
+      "rms_counts": 712.19,
+      "rms_mV": 0.4586,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-22T02:16:20.740000+00:00",
+      "rms_counts": 709.88,
+      "rms_mV": 0.4571,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECPN": [
