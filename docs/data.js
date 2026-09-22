@@ -64544,6 +64544,14 @@ var storiaData = {
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-22T14:50:23.650000+00:00",
+      "rms_counts": 807.48,
+      "rms_mV": 0.5199,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECPN": [
