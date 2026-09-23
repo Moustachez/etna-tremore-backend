@@ -68095,6 +68095,30 @@
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-23T14:44:52.360000+00:00",
+      "rms_counts": 775.58,
+      "rms_mV": 0.4994,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-23T14:45:22.360000+00:00",
+      "rms_counts": 842.54,
+      "rms_mV": 0.5425,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-23T14:45:52.360000+00:00",
+      "rms_counts": 917.58,
+      "rms_mV": 0.5908,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECPN": [
