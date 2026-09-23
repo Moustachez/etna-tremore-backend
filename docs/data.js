@@ -68079,6 +68079,22 @@ var storiaData = {
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-23T14:30:02.730000+00:00",
+      "rms_counts": 1098.77,
+      "rms_mV": 0.7075,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-23T14:30:32.730000+00:00",
+      "rms_counts": 948.39,
+      "rms_mV": 0.6107,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECPN": [
