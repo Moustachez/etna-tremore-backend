@@ -23043,27 +23043,6 @@ var storiaData = {
   ],
   "ECBD": [
     {
-      "timestamp": "2026-09-14T23:20:06.134161+00:00",
-      "rms_mV": 0.0899,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
-    {
-      "timestamp": "2026-09-14T23:31:01.560537+00:00",
-      "rms_mV": 0.0975,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
-    {
-      "timestamp": "2026-09-14T23:43:36.970200+00:00",
-      "rms_mV": 0.084,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
-    {
       "timestamp": "2026-09-14T23:53:58.246102+00:00",
       "rms_mV": 0.0903,
       "level": "QUIETE",
@@ -46009,6 +45988,30 @@ var storiaData = {
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-23T06:21:33.790000+00:00",
+      "rms_counts": 238.57,
+      "rms_mV": 0.1536,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-23T06:22:03.790000+00:00",
+      "rms_counts": 262.75,
+      "rms_mV": 0.1692,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-23T06:22:33.790000+00:00",
+      "rms_counts": 291.18,
+      "rms_mV": 0.1875,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "EMFS": [
@@ -67124,6 +67127,22 @@ var storiaData = {
       "timestamp": "2026-09-23T06:01:54.050000+00:00",
       "rms_counts": 655.3,
       "rms_mV": 0.422,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-23T06:21:34.410000+00:00",
+      "rms_counts": 605.55,
+      "rms_mV": 0.3899,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-23T06:22:04.410000+00:00",
+      "rms_counts": 731.33,
+      "rms_mV": 0.4709,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
