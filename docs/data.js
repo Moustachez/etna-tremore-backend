@@ -68119,6 +68119,30 @@ var storiaData = {
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-23T14:55:06.130000+00:00",
+      "rms_counts": 787.05,
+      "rms_mV": 0.5068,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-23T14:55:36.130000+00:00",
+      "rms_counts": 860.14,
+      "rms_mV": 0.5539,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-23T14:56:06.130000+00:00",
+      "rms_counts": 989.29,
+      "rms_mV": 0.637,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECPN": [
