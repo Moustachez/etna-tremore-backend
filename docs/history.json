@@ -23043,14 +23043,6 @@
   ],
   "ECBD": [
     {
-      "timestamp": "2026-09-17T20:50:07.350000+00:00",
-      "rms_counts": 218.84,
-      "rms_mV": 0.1409,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
-    {
       "timestamp": "2026-09-17T20:50:37.350000+00:00",
       "rms_counts": 293.1,
       "rms_mV": 0.1887,
@@ -46078,6 +46070,14 @@
       "timestamp": "2026-09-25T10:13:41.610000+00:00",
       "rms_counts": 346.69,
       "rms_mV": 0.2232,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-25T10:29:06.680000+00:00",
+      "rms_counts": 224.0,
+      "rms_mV": 0.1442,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
