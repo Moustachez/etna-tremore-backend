@@ -1,14 +1,6 @@
 var storiaData = {
   "ECNE": [
     {
-      "timestamp": "2026-09-19T23:36:14.140000+00:00",
-      "rms_counts": 1685.83,
-      "rms_mV": 1.0855,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
       "timestamp": "2026-09-19T23:36:44.140000+00:00",
       "rms_counts": 1651.58,
       "rms_mV": 1.0635,
@@ -23036,6 +23028,14 @@ var storiaData = {
       "timestamp": "2026-09-26T02:35:34.150000+00:00",
       "rms_counts": 2590.51,
       "rms_mV": 1.6681,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-26T02:44:54.830000+00:00",
+      "rms_counts": 2887.14,
+      "rms_mV": 1.8591,
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
