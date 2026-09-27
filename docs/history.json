@@ -1,38 +1,6 @@
 {
   "ECNE": [
     {
-      "timestamp": "2026-09-20T22:27:29.070000+00:00",
-      "rms_counts": 1389.29,
-      "rms_mV": 0.8946,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
-    {
-      "timestamp": "2026-09-20T22:27:59.070000+00:00",
-      "rms_counts": 1586.78,
-      "rms_mV": 1.0217,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
-      "timestamp": "2026-09-20T22:28:29.070000+00:00",
-      "rms_counts": 1379.77,
-      "rms_mV": 0.8885,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
-    {
-      "timestamp": "2026-09-20T22:28:59.070000+00:00",
-      "rms_counts": 1469.52,
-      "rms_mV": 0.9462,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
-    {
       "timestamp": "2026-09-20T22:29:29.070000+00:00",
       "rms_counts": 1661.75,
       "rms_mV": 1.07,
@@ -23036,6 +23004,38 @@
       "timestamp": "2026-09-27T04:25:45.780000+00:00",
       "rms_counts": 1940.39,
       "rms_mV": 1.2494,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-27T04:39:12.370000+00:00",
+      "rms_counts": 1602.33,
+      "rms_mV": 1.0318,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-27T04:39:42.370000+00:00",
+      "rms_counts": 1833.69,
+      "rms_mV": 1.1807,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-27T04:40:12.370000+00:00",
+      "rms_counts": 1498.97,
+      "rms_mV": 0.9652,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-27T04:40:42.370000+00:00",
+      "rms_counts": 1725.46,
+      "rms_mV": 1.1111,
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
