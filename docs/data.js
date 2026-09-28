@@ -1,14 +1,6 @@
 var storiaData = {
   "ECNE": [
     {
-      "timestamp": "2026-09-22T16:12:55.390000+00:00",
-      "rms_counts": 2392.57,
-      "rms_mV": 1.5406,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
       "timestamp": "2026-09-22T16:13:25.390000+00:00",
       "rms_counts": 2231.43,
       "rms_mV": 1.4368,
@@ -23039,17 +23031,17 @@ var storiaData = {
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-28T20:44:47.980000+00:00",
+      "rms_counts": 2226.42,
+      "rms_mV": 1.4336,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
     }
   ],
   "ECBD": [
-    {
-      "timestamp": "2026-09-21T11:35:24.920000+00:00",
-      "rms_counts": 162.08,
-      "rms_mV": 0.1044,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
     {
       "timestamp": "2026-09-21T11:47:03.840000+00:00",
       "rms_counts": 191.31,
@@ -46081,17 +46073,17 @@ var storiaData = {
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
-    }
-  ],
-  "EMFS": [
+    },
     {
-      "timestamp": "2026-09-21T10:28:51.420000+00:00",
-      "rms_counts": 598.07,
-      "rms_mV": 0.3851,
+      "timestamp": "2026-09-28T20:45:00.800000+00:00",
+      "rms_counts": 210.31,
+      "rms_mV": 0.1354,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
-    },
+    }
+  ],
+  "EMFS": [
     {
       "timestamp": "2026-09-21T11:19:00.930000+00:00",
       "rms_counts": 520.08,
@@ -69120,6 +69112,14 @@ var storiaData = {
       "timestamp": "2026-09-28T20:30:46.260000+00:00",
       "rms_counts": 764.96,
       "rms_mV": 0.4926,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-28T20:45:08.540000+00:00",
+      "rms_counts": 652.53,
+      "rms_mV": 0.4202,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
