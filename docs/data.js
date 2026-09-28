@@ -1,14 +1,6 @@
 var storiaData = {
   "ECNE": [
     {
-      "timestamp": "2026-09-22T09:12:16.120000+00:00",
-      "rms_counts": 2209.86,
-      "rms_mV": 1.423,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
       "timestamp": "2026-09-22T09:12:46.120000+00:00",
       "rms_counts": 2422.76,
       "rms_mV": 1.5601,
@@ -23039,17 +23031,17 @@ var storiaData = {
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-28T14:37:40.400000+00:00",
+      "rms_counts": 2147.32,
+      "rms_mV": 1.3827,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
     }
   ],
   "ECBD": [
-    {
-      "timestamp": "2026-09-21T02:51:40.090000+00:00",
-      "rms_counts": 182.79,
-      "rms_mV": 0.1177,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
     {
       "timestamp": "2026-09-21T02:52:10.090000+00:00",
       "rms_counts": 174.32,
@@ -46081,17 +46073,17 @@ var storiaData = {
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
-    }
-  ],
-  "EMFS": [
+    },
     {
-      "timestamp": "2026-09-21T04:57:19.460000+00:00",
-      "rms_counts": 509.93,
-      "rms_mV": 0.3284,
+      "timestamp": "2026-09-28T14:37:52.760000+00:00",
+      "rms_counts": 177.33,
+      "rms_mV": 0.1142,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
-    },
+    }
+  ],
+  "EMFS": [
     {
       "timestamp": "2026-09-21T04:57:49.460000+00:00",
       "rms_counts": 745.24,
@@ -69123,6 +69115,14 @@ var storiaData = {
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-28T14:37:59.690000+00:00",
+      "rms_counts": 629.13,
+      "rms_mV": 0.4051,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
     }
   ],
   "ECPN": [
@@ -88464,6 +88464,14 @@ var storiaData = {
       "timestamp": "2026-09-28T14:22:06.700000+00:00",
       "rms_counts": 1978.49,
       "rms_mV": 1.274,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-28T14:37:47.650000+00:00",
+      "rms_counts": 1909.23,
+      "rms_mV": 1.2294,
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
