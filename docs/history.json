@@ -23043,30 +23043,6 @@
   ],
   "ECBD": [
     {
-      "timestamp": "2026-09-20T20:50:26.850000+00:00",
-      "rms_counts": 190.32,
-      "rms_mV": 0.1225,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
-    {
-      "timestamp": "2026-09-20T21:15:33.230000+00:00",
-      "rms_counts": 183.28,
-      "rms_mV": 0.118,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
-    {
-      "timestamp": "2026-09-20T21:27:28.060000+00:00",
-      "rms_counts": 189.15,
-      "rms_mV": 0.1218,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
-    {
       "timestamp": "2026-09-20T21:27:58.060000+00:00",
       "rms_counts": 187.46,
       "rms_mV": 0.1207,
@@ -46078,6 +46054,30 @@
       "timestamp": "2026-09-28T09:54:44.140000+00:00",
       "rms_counts": 206.62,
       "rms_mV": 0.133,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-28T10:13:40.250000+00:00",
+      "rms_counts": 176.04,
+      "rms_mV": 0.1134,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-28T10:14:10.250000+00:00",
+      "rms_counts": 170.38,
+      "rms_mV": 0.1097,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-09-28T10:14:40.250000+00:00",
+      "rms_counts": 184.04,
+      "rms_mV": 0.1185,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
@@ -88216,6 +88216,22 @@
       "timestamp": "2026-09-28T08:31:51.690000+00:00",
       "rms_counts": 2733.88,
       "rms_mV": 1.7604,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-28T10:13:34.880000+00:00",
+      "rms_counts": 1711.51,
+      "rms_mV": 1.1021,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-28T10:14:04.880000+00:00",
+      "rms_counts": 1700.53,
+      "rms_mV": 1.095,
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
