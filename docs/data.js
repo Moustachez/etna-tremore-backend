@@ -89315,6 +89315,14 @@ var storiaData = {
       "level": "MODERATO",
       "label": "Attivit\u00e0 moderata",
       "color": "#eab308"
+    },
+    {
+      "timestamp": "2026-09-29T08:51:38.040000+00:00",
+      "rms_counts": 1853.33,
+      "rms_mV": 1.1934,
+      "level": "MODERATO",
+      "label": "Attivit\u00e0 moderata",
+      "color": "#eab308"
     }
   ]
 };
