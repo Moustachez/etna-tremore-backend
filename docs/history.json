@@ -1,14 +1,6 @@
 {
   "ECNE": [
     {
-      "timestamp": "2026-09-25T07:16:31.720000+00:00",
-      "rms_counts": 2367.76,
-      "rms_mV": 1.5246,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
       "timestamp": "2026-09-25T07:17:01.720000+00:00",
       "rms_counts": 1955.28,
       "rms_mV": 1.259,
@@ -23036,6 +23028,14 @@
       "timestamp": "2026-10-02T00:39:40.630000+00:00",
       "rms_counts": 992.92,
       "rms_mV": 0.6394,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-10-02T01:14:38.620000+00:00",
+      "rms_counts": 978.9,
+      "rms_mV": 0.6303,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
