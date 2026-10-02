@@ -69127,13 +69127,6 @@ var storiaData = {
   ],
   "ECPN": [
     {
-      "timestamp": "2026-09-10T17:16:01.300576+00:00",
-      "rms_mV": 1.7912,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
       "timestamp": "2026-09-10T17:29:29.559782+00:00",
       "rms_mV": 1.6688,
       "level": "MODERATO",
@@ -91924,6 +91917,14 @@ var storiaData = {
       "timestamp": "2026-10-02T16:06:08.840000+00:00",
       "rms_counts": 869.65,
       "rms_mV": 0.56,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-10-02T16:43:06.350000+00:00",
+      "rms_counts": 1020.34,
+      "rms_mV": 0.657,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
