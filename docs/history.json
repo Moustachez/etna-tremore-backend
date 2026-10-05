@@ -1,54 +1,6 @@
 {
   "ECNE": [
     {
-      "timestamp": "2026-09-26T11:46:38.800000+00:00",
-      "rms_counts": 2122.98,
-      "rms_mV": 1.367,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
-      "timestamp": "2026-09-26T11:55:14.960000+00:00",
-      "rms_counts": 2127.52,
-      "rms_mV": 1.3699,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
-      "timestamp": "2026-09-26T11:55:44.960000+00:00",
-      "rms_counts": 1923.44,
-      "rms_mV": 1.2385,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
-      "timestamp": "2026-09-26T11:56:14.960000+00:00",
-      "rms_counts": 1737.7,
-      "rms_mV": 1.1189,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
-      "timestamp": "2026-09-26T11:56:44.960000+00:00",
-      "rms_counts": 1903.64,
-      "rms_mV": 1.2258,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
-      "timestamp": "2026-09-26T12:34:08.910000+00:00",
-      "rms_counts": 2212.77,
-      "rms_mV": 1.4248,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
       "timestamp": "2026-09-26T12:34:38.910000+00:00",
       "rms_counts": 2176.51,
       "rms_mV": 1.4015,
@@ -23036,6 +22988,54 @@
       "timestamp": "2026-10-05T05:28:15.490000+00:00",
       "rms_counts": 1317.8,
       "rms_mV": 0.8486,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-10-05T12:29:15.660000+00:00",
+      "rms_counts": 993.98,
+      "rms_mV": 0.64,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-10-05T12:29:45.660000+00:00",
+      "rms_counts": 882.86,
+      "rms_mV": 0.5685,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-10-05T12:30:15.660000+00:00",
+      "rms_counts": 1274.31,
+      "rms_mV": 0.8206,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-10-05T12:30:45.660000+00:00",
+      "rms_counts": 1005.09,
+      "rms_mV": 0.6472,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-10-05T12:31:15.660000+00:00",
+      "rms_counts": 944.06,
+      "rms_mV": 0.6079,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-10-05T12:31:45.660000+00:00",
+      "rms_counts": 1316.72,
+      "rms_mV": 0.8479,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
@@ -46085,22 +46085,6 @@
   ],
   "EMFS": [
     {
-      "timestamp": "2026-09-25T14:25:35.010000+00:00",
-      "rms_counts": 668.87,
-      "rms_mV": 0.4307,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
-    {
-      "timestamp": "2026-09-25T14:26:05.010000+00:00",
-      "rms_counts": 600.45,
-      "rms_mV": 0.3866,
-      "level": "QUIETE",
-      "label": "Quiete",
-      "color": "#22c55e"
-    },
-    {
       "timestamp": "2026-09-25T14:26:35.010000+00:00",
       "rms_counts": 738.95,
       "rms_mV": 0.4758,
@@ -69120,6 +69104,22 @@
       "timestamp": "2026-10-05T05:26:56.050000+00:00",
       "rms_counts": 279.31,
       "rms_mV": 0.1798,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-10-05T12:29:27.800000+00:00",
+      "rms_counts": 386.58,
+      "rms_mV": 0.2489,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-10-05T12:29:57.800000+00:00",
+      "rms_counts": 381.15,
+      "rms_mV": 0.2454,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
