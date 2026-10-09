@@ -1,38 +1,6 @@
 {
   "ECNE": [
     {
-      "timestamp": "2026-09-26T16:46:21.660000+00:00",
-      "rms_counts": 1938.72,
-      "rms_mV": 1.2484,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
-      "timestamp": "2026-09-26T16:46:51.660000+00:00",
-      "rms_counts": 1845.7,
-      "rms_mV": 1.1885,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
-      "timestamp": "2026-09-26T16:47:21.660000+00:00",
-      "rms_counts": 1762.14,
-      "rms_mV": 1.1347,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
-      "timestamp": "2026-09-26T16:47:51.660000+00:00",
-      "rms_counts": 1822.6,
-      "rms_mV": 1.1736,
-      "level": "MODERATO",
-      "label": "Attivit\u00e0 moderata",
-      "color": "#eab308"
-    },
-    {
       "timestamp": "2026-09-26T16:54:23.550000+00:00",
       "rms_counts": 1945.34,
       "rms_mV": 1.2526,
@@ -23036,6 +23004,38 @@
       "timestamp": "2026-10-09T18:59:38.530000+00:00",
       "rms_counts": 749.65,
       "rms_mV": 0.4827,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-10-09T23:05:20.400000+00:00",
+      "rms_counts": 861.81,
+      "rms_mV": 0.5549,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-10-09T23:05:50.400000+00:00",
+      "rms_counts": 972.4,
+      "rms_mV": 0.6261,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-10-09T23:06:20.400000+00:00",
+      "rms_counts": 776.7,
+      "rms_mV": 0.5001,
+      "level": "QUIETE",
+      "label": "Quiete",
+      "color": "#22c55e"
+    },
+    {
+      "timestamp": "2026-10-09T23:06:50.400000+00:00",
+      "rms_counts": 911.9,
+      "rms_mV": 0.5872,
       "level": "QUIETE",
       "label": "Quiete",
       "color": "#22c55e"
